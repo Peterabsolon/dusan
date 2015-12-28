@@ -14,3 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => config('admin.prefix', 'admin')], function () {
+	Route::group(['middleware' => config('admin.filter.auth')], function () {
+		Route::resource('services', 'ServicesController', [
+			'except' => 'show',
+			'names' => [
+				'index' => 'admin.services.index',
+                'create' => 'admin.services.create',
+                'store' => 'admin.services.store',
+                'show' => 'admin.services.show',
+                'update' => 'admin.services.update',
+                'edit' => 'admin.services.edit',
+                'destroy' => 'admin.services.destroy',				
+			],
+		]);
+	});
+});

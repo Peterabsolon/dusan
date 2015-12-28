@@ -36,4 +36,8 @@ return [
         'model' => 'Pingpong\Admin\Entities\Category',
         'perpage' => 10
     ],
+    'service' => [ 
+        'model' => 'App\Entities\Admin\Service',
+        'perpage' => 10
+    ],
 ];

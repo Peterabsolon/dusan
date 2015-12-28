@@ -148,8 +148,13 @@ return [
         /*
          * Admin Service Providers...        
          */
+        
+        // Vendor
         Pingpong\Admin\Providers\SupportServiceProvider::class,
         Pingpong\Admin\AdminServiceProvider::class,        
+
+        // Custom
+        App\Providers\AdminServiceProvider::class,
 
     ],
 

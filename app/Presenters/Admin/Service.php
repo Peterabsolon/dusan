@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Presenters;
+namespace App\Presenters\Admin;
 
 use Pingpong\Presenters\Presenter;
 

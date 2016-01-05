@@ -109,6 +109,16 @@ return [
     */
 
     'providers' => [
+        /*
+         * Admin Service Providers...     
+         *
+         * Loading these first so we can overwrite its routes
+         */
+        
+        Pingpong\Admin\Providers\SupportServiceProvider::class,
+        Pingpong\Admin\AdminServiceProvider::class,        
+
+        App\Providers\AdminServiceProvider::class,    
 
         /*
          * Laravel Framework Service Providers...
@@ -145,16 +155,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        /*
-         * Admin Service Providers...        
-         */
-        
-        // Vendor
-        Pingpong\Admin\Providers\SupportServiceProvider::class,
-        Pingpong\Admin\AdminServiceProvider::class,        
 
-        // Custom
-        App\Providers\AdminServiceProvider::class,
 
     ],
 

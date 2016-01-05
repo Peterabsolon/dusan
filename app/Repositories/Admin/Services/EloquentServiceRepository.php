@@ -45,7 +45,15 @@ class EloquentServiceRepository implements ServiceRepository
 
     public function findById($id)
     {
-        return $this->getModel()->find($id);
+        $model = $this->getModel()->find($id);
+
+        $model->entries;
+
+        $model->prices;
+
+        $model->packages;
+
+        return $model;
     }
 
     public function findBy($key, $value, $operator = '=')

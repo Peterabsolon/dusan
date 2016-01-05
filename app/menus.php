@@ -14,4 +14,4 @@ $rightMenu = Menu::instance('admin-menu-right');
  * $leftMenu->route('your-route', 'The Title');
  */
 
-$leftMenu->route('admin.services.index', 'Services', [], 5, ['icon' => 'fa fa-wrench']);
+$leftMenu->route('admin.services.index', 'Services', [], .5, ['icon' => 'fa fa-wrench']);

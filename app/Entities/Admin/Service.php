@@ -15,14 +15,15 @@ class Service extends Model
      * @var array
      */
     protected $fillable = [
-        // 'type',
         'user_id',
-        // 'category_id',
         'title',
-        // 'slug',
-        // 'body',
-        // 'image',
-        // 'published_at',
+        'slug',
+        'body',
+        'photo_services',
+        'video_services',
+        'dj_services',
+        'image',
+        'note',
     ];
 
     /**
@@ -80,5 +81,29 @@ class Service extends Model
         }
 
         return false;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function prices_left()
+    {
+        return $this->hasMany('App\Entities\Admin\Price')->where('position', 'left');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function prices_right()
+    {
+        return $this->hasMany('App\Entities\Admin\Price')->where('position', 'right');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function packages()
+    {
+        return $this->hasMany('App\Entities\Admin\Package');
     }
 }

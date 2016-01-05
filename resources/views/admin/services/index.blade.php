@@ -15,9 +15,6 @@
 			<th>No</th>
 			<th>Title</th>
 			<th>Author</th>
-			@if( ! isOnPages())
-			<th>Category</th>
-			@endif
 			<th>Created At</th>
 			<th class="text-center">Action</th>
 		</thead>
@@ -27,9 +24,6 @@
 				<td>{!! $no !!}</td>
 				<td>{!! $service->title !!}</td>
 				<td>{!! $service->user->name !!}</td>
-				@if( ! isOnPages())
-				<td>{!! $service->category ? $service->category->name : null !!}</td>
-				@endif
 				<td>{!! $service->created_at !!}</td>
 				<td class="text-center">
 					<a href="{!! route('admin.services.edit', $service->id) !!}">Edit</a>

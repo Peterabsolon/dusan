@@ -3537,3 +3537,72 @@ fieldset[disabled] .btn-vk.active {
   color: #587ea3;
   background-color: #ffffff;
 }
+
+/* Custom styles */
+.entry-group .well {
+  padding: 8px;
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.entry-group .entry-data {
+}
+
+.entry-group .entry-price-title {
+}
+
+.entry-group .entry-price-price {
+  display: inline-block;
+  width: 85px;
+  margin-left: 10px;
+}
+
+.btn-entry-delete,
+.btn-price-delete {
+  margin: 0 0 0 8px;
+  vertical-align: top;
+  padding: 6px 12px;  
+}
+
+.btn-entry-add .fa {
+  margin-right: 5px;
+}
+
+.input-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.btn-upload {
+  width: 300px;
+  display: block;
+}
+
+.img-maxwidth .img-responsive {
+  max-width: 600px !important;
+}
+
+.entry-group-packages .well {
+  flex-wrap: wrap;
+}
+
+.entry-group-packages .note-editor {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.entry-group-packages input[type='number'] {
+  margin-bottom: 10px;
+}
+
+.entry-group-packages .btn-entry-delete {
+  margin: 0;
+}
+
+.entry-group-packages h4 {
+  margin: 0 0 5px;
+}

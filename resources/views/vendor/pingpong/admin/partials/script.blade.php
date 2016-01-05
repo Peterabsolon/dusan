@@ -1,6 +1,6 @@
 <script src="{!! admin_asset('components/jquery/dist/jquery.min.js') !!}"></script>
 <script src="{!! admin_asset('components/bootstrap/dist/js/bootstrap.min.js') !!}" type="text/javascript"></script>
-<script src="{!! admin_asset('components/jquery-ui/jquery-ui.min.js') !!}" type="text/javascript"></script>
+{{-- <script src="{!! admin_asset('components/jquery-ui/jquery-ui.min.js') !!}" type="text/javascript"></script> --}}
 <!-- Sparkline -->
 <script src="{!! admin_asset('adminlte/js/plugins/sparkline/jquery.sparkline.min.js') !!}" type="text/javascript"></script>
 <!-- jvectormap -->

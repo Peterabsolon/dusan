@@ -16,6 +16,13 @@ class CreateServicesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
+            $table->string('slug');
+            $table->text('body');
+            $table->text('photo_services');
+            $table->text('video_services');
+            $table->text('dj_services');
+            $table->string('image');
+            $table->text('note');
             $table->timestamps();
         });
     }

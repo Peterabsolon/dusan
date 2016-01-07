@@ -9,7 +9,7 @@ class Create extends Validator
     protected $rules = [
         'title' => 'required',
         'slug' => 'required|unique:articles,slug',
-        'body' => 'required'
+        'sort_order' => 'required'
     ];
 
     public function rules()

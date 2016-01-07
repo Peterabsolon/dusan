@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Entities\Admin;
+namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Package extends Model
+class Price extends Model
 {
     //
 }

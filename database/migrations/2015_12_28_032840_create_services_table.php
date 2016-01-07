@@ -23,6 +23,7 @@ class CreateServicesTable extends Migration
             $table->text('dj_services');
             $table->string('image');
             $table->text('note');
+            $table->integer('sort_order');
             $table->timestamps();
         });
     }

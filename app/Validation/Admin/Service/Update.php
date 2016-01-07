@@ -12,7 +12,7 @@ class Update extends Validator
         return [
             'title' => 'required',
             'slug' => 'required|unique:articles,slug,'.Request::segment(3),
-            'body' => 'required',
+            'sort_order' => 'required',
         ];
     }
 }

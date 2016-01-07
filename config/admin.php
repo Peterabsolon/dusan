@@ -37,7 +37,7 @@ return [
         'perpage' => 10
     ],
     'service' => [ 
-        'model' => 'App\Entities\Admin\Service',
+        'model' => 'App\Entities\Service',
         'perpage' => 10
     ],
 ];

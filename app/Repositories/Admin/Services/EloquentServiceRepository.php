@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Admin\Services;
 
-use App\Entities\Admin\Service;
+use App\Entities\Service;
 
 class EloquentServiceRepository implements ServiceRepository
 {

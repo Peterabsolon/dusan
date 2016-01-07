@@ -84,6 +84,16 @@ class Service extends Model
         return false;
     }
 
+    public function deletePrices($service_id)
+    {
+        DB::table('prices')->where('service_id', $service_id)->delete();
+    }
+
+    public function deletePackages($service_id)
+    {
+        DB::table('packages')->where('service_id', $service_id)->delete();
+    }    
+
     /**
      * @return \Illuminate\Database\Eloquent\Model
      */

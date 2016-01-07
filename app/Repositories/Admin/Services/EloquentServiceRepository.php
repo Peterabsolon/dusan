@@ -68,6 +68,10 @@ class EloquentServiceRepository implements ServiceRepository
         if (!is_null($service)) {
             $service->delete();
 
+            $service->deletePrices($id);
+
+            $service->deletePackages($id);
+
             return true;
         }
 

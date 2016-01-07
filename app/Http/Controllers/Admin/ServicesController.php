@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\App;
@@ -10,7 +10,7 @@ use Pingpong\Admin\Uploader\ImageUploader;
 use App\Validation\Admin\Service\Create;
 use App\Validation\Admin\Service\Update;
 
-class ServicesController extends AdminBaseController
+class ServicesController extends BaseController
 {
 	protected $services;
 
@@ -86,7 +86,11 @@ class ServicesController extends AdminBaseController
         $data['user_id'] = \Auth::id();
         $data['slug'] = Str::slug($data['title']);
 
-        $this->repository->create($data);
+        $service_id = $this->repository->create($data)->id;
+
+        $this->repository->createPrices($service_id, $data);
+
+        $this->repository->createPackages($service_id, $data);
 
         return $this->redirect('services.index');
     }
@@ -154,7 +158,12 @@ class ServicesController extends AdminBaseController
 
             $data['user_id'] = \Auth::id();
             $data['slug'] = Str::slug($data['title']);
+            
             $service->update($data);
+
+            $service->updatePrices($id, $data);
+
+            $service->updatePackages($id, $data);
 
             return $this->redirect('services.index');
         } catch (ModelNotFoundException $e) {

@@ -92,8 +92,8 @@
 				@foreach($model->packages as $key => $package)
 					<div class="well">
 						<h4>#{{ ($package_key + 1) }}</h4>
-						{!! Form::text('packages[' . $key . '][body]', $packages->body, ['class' => 'form-control summernote', 'placeholder' => 'Text']) !!}
-						{!! Form::text('packages[' . $key . '][price]', $packages->price, ['class' => 'form-control', 'placeholder' => 'Price']) !!}
+						{!! Form::textarea('packages[' . $key . '][body]', $package->body, ['class' => 'form-control summernote', 'placeholder' => 'Text']) !!}
+						{!! Form::number('packages[' . $key . '][price]', $package->price, ['class' => 'form-control', 'placeholder' => 'Price']) !!}
 						<button type="button" class="btn btn-danger btn-entry-delete" data-type="package"><i class="fa fa-close"></i> Remove package</button>
 					</div>
 				<?php $package_key++; ?>				
@@ -139,7 +139,7 @@
 		$(document).ready(function(){
 			var toolbar = [
 				['style', ['bold', 'italic', 'underline', 'clear']],
-				['para', ['ul']],
+				['para', ['ol']],
 			];
 
 			$('.summernote').summernote({

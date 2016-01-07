@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Route::group(['prefix' => config('admin.prefix', 'admin')], function () {
 	Route::group(['middleware' => config('admin.filter.auth')], function () {
-		Route::get('/', ['as' => 'admin.home', 'uses' => 'ServicesController@index']);
+		Route::get('/', ['as' => 'admin.home', 'uses' => 'Admin\ServicesController@index']);
 
-		Route::resource('services', 'ServicesController', [
+		Route::resource('services', 'Admin\ServicesController', [
 			'except' => 'show',
 			'names' => [
 				'index' => 'admin.services.index',

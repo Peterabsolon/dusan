@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Admin\Services;
 
-use Pingpong\Admin\Entities\Article;
+use App\Entities\Admin\Service;
 
 class EloquentServiceRepository implements ServiceRepository
 {
@@ -47,9 +47,9 @@ class EloquentServiceRepository implements ServiceRepository
     {
         $model = $this->getModel()->find($id);
 
-        $model->entries;
+        $model->prices_left;
 
-        $model->prices;
+        $model->prices_right;
 
         $model->packages;
 
@@ -63,10 +63,10 @@ class EloquentServiceRepository implements ServiceRepository
 
     public function delete($id)
     {
-        $article = $this->findById($id);
+        $service = $this->findById($id);
 
-        if (!is_null($article)) {
-            $article->delete();
+        if (!is_null($service)) {
+            $service->delete();
 
             return true;
         }
@@ -78,4 +78,29 @@ class EloquentServiceRepository implements ServiceRepository
     {
         return $this->getModel()->create($data);
     }
+
+    public function createPrices($service_id, array $data)
+    {
+        return $this->getModel()->createPrices($service_id, $data);
+    }
+
+    public function createPackages($service_id, array $data)
+    {
+        return $this->getModel()->createPackages($service_id, $data);
+    }
+
+    public function update(array $data)
+    {
+        return $this->getModel()->update($data);
+    }
+
+    public function updatePrices($service_id, array $data)
+    {
+        return $this->getModel()->updatePrices($service_id, $data);
+    }    
+
+    public function updatePackages($service_id, array $data)
+    {
+        return $this->getModel()->updatePackages($service_id, $data);
+    }        
 }

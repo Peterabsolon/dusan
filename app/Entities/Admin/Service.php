@@ -2,6 +2,7 @@
 
 namespace App\Entities\Admin;
 
+use DB;
 use Pingpong\Presenters\Model;
 
 class Service extends Model
@@ -82,6 +83,108 @@ class Service extends Model
 
         return false;
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function createPrices($service_id, $data)
+    {
+        foreach($data['prices_left'] as $price) {
+            DB::table('prices')->insert(
+                array(
+                    'service_id' => $service_id,
+                    'title' => $price['title'],
+                    'price' => $price['price'],
+                    'position' => 'left'
+                )
+            );   
+        }
+
+        foreach($data['prices_right'] as $price) {
+            DB::table('prices')->insert(
+                array(
+                    'service_id' => $service_id,
+                    'title' => $price['title'],
+                    'price' => $price['price'],
+                    'position' => 'right'
+                )
+            );   
+        }        
+
+        return $this;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function createPackages($service_id, $data)
+    {
+        foreach($data['packages'] as $package)
+        {
+            DB::table('packages')->insert(
+                array(
+                    'service_id' => $service_id,
+                    'body' => $package['body'],
+                    'price' => $package['price']
+                )
+            );            
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function updatePrices($service_id, $data)
+    {
+        DB::table('prices')->where('service_id', $service_id)->delete();
+
+        foreach($data['prices_left'] as $price) {
+            DB::table('prices')->insert(
+                array(
+                    'service_id' => $service_id,
+                    'title' => $price['title'],
+                    'price' => $price['price'],
+                    'position' => 'left'
+                )
+            );   
+        }
+
+        foreach($data['prices_right'] as $price) {
+            DB::table('prices')->insert(
+                array(
+                    'service_id' => $service_id,
+                    'title' => $price['title'],
+                    'price' => $price['price'],
+                    'position' => 'right'
+                )
+            );   
+        }          
+
+        return $this; 
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function updatePackages($service_id, $data)
+    {
+        DB::table('packages')->where('service_id', $service_id)->delete();
+
+        foreach($data['packages'] as $package)
+        {
+            DB::table('packages')->insert(
+                array(
+                    'service_id' => $service_id,
+                    'body' => $package['body'],
+                    'price' => $package['price']
+                )
+            );            
+        }
+
+        return $this;
+    }    
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

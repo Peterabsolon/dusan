@@ -6,5 +6,5 @@ use Pingpong\Admin\Repositories\Repository;
 
 interface ServiceRepository extends Repository
 {
-    // public function getService();
+	
 }

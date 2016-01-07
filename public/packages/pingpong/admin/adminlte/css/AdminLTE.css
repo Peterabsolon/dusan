@@ -3564,7 +3564,9 @@ fieldset[disabled] .btn-vk.active {
   padding: 6px 12px;  
 }
 
-.btn-entry-add .fa {
+.btn-entry-add .fa,
+.btn-entry-delete[data-type="package"] .fa,
+.btn-upload .fa {
   margin-right: 5px;
 }
 
@@ -3605,4 +3607,6 @@ fieldset[disabled] .btn-vk.active {
 
 .entry-group-packages h4 {
   margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: bold;
 }

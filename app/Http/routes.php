@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('stuzkova', ['as' => 'stuzkova', 'uses' => 'ServiceController@stuzkova']);
+Route::get('svadba', ['as' => 'svadba', 'uses' => 'ServiceController@svadba']);
+Route::get('udalost', ['as' => 'udalost', 'uses' => 'ServiceController@udalost']);
+Route::get('referencie', ['as' => 'referencie', 'uses' => 'ReferencesController@index']);
+Route::get('kontakt', ['as' => 'kontakt', 'uses' => 'ContactController@index']);
 
 Route::group(['prefix' => config('admin.prefix', 'admin')], function () {
 	Route::group(['middleware' => config('admin.filter.auth')], function () {

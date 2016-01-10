@@ -29,7 +29,7 @@ class EloquentServiceRepository implements ServiceRepository
 
     public function getAll()
     {
-        return $this->getModel()->latest()->paginate($this->perPage());
+        return $this->getModel()->orderBy('sort_order')->paginate($this->perPage());
     }
 
     public function search($searchQuery)

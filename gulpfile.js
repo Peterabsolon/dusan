@@ -1,5 +1,3 @@
-var elixir = require('laravel-elixir');
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -11,6 +9,39 @@ var elixir = require('laravel-elixir');
  |
  */
 
+var elixir = require('laravel-elixir');
+var svgSprite = require("gulp-svg-sprites");
+var gulp = require('gulp');
+
+elixir.config.sourcemaps = false;
+
 elixir(function(mix) {
-    mix.sass('app.scss');
+	mix
+		.browserSync({
+			proxy : 'localhost:8000',
+			notify: false,
+			files : [
+				{
+					match: ['public/assets/**/*']
+				}
+			]
+		})
+
+		.sass('app.scss', 'public/assets/css/app.css')
+
+		.scripts([
+			'app.js'
+		], 'public/assets/js/app.js')
+
+		.scripts([
+			'vendor/jquery.min.js',
+			'vendor/fastclick.js',
+		], 'public/assets/js/libs.js');
+});
+
+// TODO
+gulp.task('sprites', function () {
+    return gulp.src('testik/*.svg')
+        .pipe(svgSprite())
+        .pipe(gulp.dest('sprites'));
 });

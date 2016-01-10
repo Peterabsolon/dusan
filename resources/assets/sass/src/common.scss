@@ -1,0 +1,109 @@
+body {
+	background: #aaa;
+}
+
+body.sidebar--toggled {
+	height: 100vh; // To prevent scrolling while the sidebar is shown
+	overflow: hidden;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.container {
+	padding: 0 15px;
+	max-width: 1600px;
+	margin: 0 auto;
+
+	@include breakpoint($breakpoint-quadhd) {
+		max-width: 90%; 
+	}
+}
+
+/**
+ * Sidebar
+ */
+.sidebar {
+	position: fixed; 
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #111;
+	z-index: 1;
+	transform: translateX(100%);
+	transition: .15s ease all;
+	
+	@include breakpoint($breakpoint-small) {
+		width: 230px;
+		left: auto;
+	}
+}
+
+.sidebar.sidebar--toggled {
+	transform: none;
+}
+
+.menu {
+	padding-left: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	
+	@include breakpoint($breakpoint-small) {
+		padding-left: 40px;
+	}
+}
+
+.menu__item {
+	margin-bottom: 25px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.menu__link {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+/**
+ * Buttons
+ */
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	outline: none;
+	padding: 10px 35px;
+	font-size: 13px;
+	font-weight: bold;
+	border: 2px solid #fff;
+	border-radius: 50px;
+	transition: .15s ease all;
+
+	@include breakpoint($breakpoint-large) {
+		font-size: 14px;
+	}
+
+	@include breakpoint($breakpoint-quadhd) {
+		font-size: 16px;
+		padding: 13px 40px;
+	}	
+}
+
+.btn--secondary {
+	color: #fff;
+	text-shadow: 1px 1px 5px rgba(0,0,0,.1);
+	
+	&:hover {
+		text-shadow: none;
+		background: #fff;
+		color: #222;
+	}
+}

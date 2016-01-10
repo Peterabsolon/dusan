@@ -1,0 +1,140 @@
+.footer {
+	background: #111;
+	padding: 20px 0;
+
+	@include breakpoint($breakpoint-small) {
+		padding: 0 20px;
+		height: 50px;
+
+		.container {
+			display: flex;
+		}		
+	}
+
+	@include breakpoint($breakpoint-medium) {
+		padding: 0px 40px;
+	}
+
+	@include breakpoint($breakpoint-full) {
+		padding: 0px 40px;
+	}	
+
+	@include breakpoint($breakpoint-quadhd) {
+		height: 70px;
+	}	
+}
+
+/**
+ * Contact
+ */
+.contact {
+	margin-bottom: 20px;
+
+	@include breakpoint($breakpoint-small) {
+		width: 50%;
+		margin-bottom: 0;
+	}	
+}
+
+.contact__list {
+	@include breakpoint($breakpoint-small) {
+		display: inline-block;
+	}		
+}
+
+.contact__item {
+	margin-bottom: 5px;
+	position: relative;
+
+	@include breakpoint($breakpoint-small) {
+		display: inline-block;
+		margin-bottom: 0;
+		padding: 0 10px;
+		line-height: 50px;
+
+		&:first-child {
+			&::after {
+				content: '';
+				position: absolute;
+				height: 12px;
+				width: 1px;
+				background: #666;
+				right: -2px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}		
+	}			
+
+	@include breakpoint($breakpoint-quadhd) {
+		line-height: 70px;
+	}
+}
+
+.contact__link {
+	font-size: 13px;	
+	text-decoration: none;
+	color: #666;
+	display: block;
+	transition: .15s ease all;
+
+	&:hover {
+		color: #fff;
+	}
+
+	@include breakpoint($breakpoint-large) {
+		font-size: 14px;	
+	}
+
+	@include breakpoint($breakpoint-quadhd) {
+		font-size: 16px;	
+	}	
+}
+
+.contact__title {
+	color: #666;
+	text-transform: uppercase;
+	margin: 0 0 10px;
+	font-size: 13px;
+
+	@include breakpoint($breakpoint-small) {
+		margin-bottom: 0;
+		display: inline-block;
+		line-height: 50px;
+	}
+
+	@include breakpoint($breakpoint-large) {
+		font-size: 14px;	
+	}	
+
+	@include breakpoint($breakpoint-quadhd) {
+		font-size: 16px;	
+		line-height: 70px;
+	}	
+}
+
+/**
+ * Copyrights
+ */
+.copyrights {
+	@include breakpoint($breakpoint-small) {
+		width: 50%;
+		text-align: right;
+		line-height: 50px;		
+	}	
+}
+
+.copyrights__text {
+	color: #666;
+	font-size: 13px;
+	display: block;
+
+	@include breakpoint($breakpoint-large) {
+		font-size: 14px;	
+	}	
+
+	@include breakpoint($breakpoint-quadhd) {
+		font-size: 16px;	
+		line-height: 70px;
+	}	
+}

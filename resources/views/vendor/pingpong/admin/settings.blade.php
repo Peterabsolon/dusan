@@ -40,6 +40,16 @@
 			{!! $errors->first('site.description', '<div class="text-danger">:message</div>') !!}
 		</div>
 		<div class="form-group">
+			{!! Form::label('contact.email', 'Contact e-mail:') !!}
+			{!! Form::text('contact.email', option('contact.email'), ['class' => 'form-control']) !!}
+			{!! $errors->first('contact.email', '<div class="text-danger">:message</div>') !!}
+		</div>
+		<div class="form-group">
+			{!! Form::label('contact.phone', 'Contact phone:') !!}
+			{!! Form::text('contact.phone', option('contact.phone'), ['class' => 'form-control']) !!}
+			{!! $errors->first('contact.phone', '<div class="text-danger">:message</div>') !!}
+		</div>				
+		<div class="form-group">
 			{!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
 		</div>
 		{!! Form::close() !!}

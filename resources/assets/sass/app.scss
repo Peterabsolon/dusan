@@ -1,2 +1,14 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import 'vendor/normalize';
+@import 'vendor/breakpoint.scss';
 
+@import 'variables';
+
+@import 'src/typography';
+@import 'src/common';
+@import 'src/header';
+@import 'src/footer'; 
+
+@import 'src/home';
+// @import 'src/portfolio';
+// @import 'src/contact';
+// @import 'src/about';

@@ -3610,3 +3610,14 @@ fieldset[disabled] .btn-vk.active {
   font-size: 14px;
   font-weight: bold;
 }
+
+/* Hide menu items with CSS to prevent modyfing /vendor/pingpong/admin package */
+.sidebar-menu li:nth-child(1),
+.sidebar-menu li:nth-child(3),
+.sidebar-menu li:nth-child(4) {
+  display: none;
+}
+
+.sidebar-menu li:nth-child(2) {
+  border-top: 1px solid #dbdbdb !important;
+}

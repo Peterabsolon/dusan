@@ -14,11 +14,6 @@
 		{!! $errors->first('slug', '<div class="text-danger">:message</div>') !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('sort_order', 'Sort order:') !!}
-		{!! Form::number('sort_order', null, ['class' => 'form-control']) !!}
-		{!! $errors->first('sort_order', '<div class="text-danger">:message</div>') !!}
-	</div>	
-	<div class="form-group">
 		{!! Form::label('', 'Image:') !!}
 		{!! Form::file('image', ['class' => 'input-file', 'id' => 'image']) !!}
 		<label for="image" class="btn btn-primary btn-upload"><i class="fa fa-upload"></i> <span>Choose a file</span></label>

@@ -15,7 +15,6 @@
 			<th>No</th>
 			<th>Title</th>
 			<th>Author</th>
-			<th>Sort order</th>
 			<th>Created At</th>
 			<th class="text-center">Action</th>
 		</thead>
@@ -25,7 +24,6 @@
 				<td>{!! $no !!}</td>
 				<td>{!! $service->title !!}</td>
 				<td>{!! $service->user->name !!}</td>
-				<td>{!! $service->sort_order !!}</td>
 				<td>{!! $service->created_at !!}</td>
 				<td class="text-center">
 					<a href="{!! route('admin.services.edit', $service->id) !!}">Edit</a>

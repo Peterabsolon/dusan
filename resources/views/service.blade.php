@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page-home">
+<html class="page-{{ $service->slug }}">
 	<head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -11,49 +11,75 @@
 	</head>
 	<body>
 
-		<header class="header">
+		<header class="header header--static">
 			<div class="container">
 				<h1 class="header__logo"><a href="{!! route('home') !!}"><span>Bez</span>názvu</a></h1>
 
 				<button type="button" class="header__button" data-action="toggle-menu">
-					<div class="header__button__bar"></div>
-					<div class="header__button__bar"></div>
-					<div class="header__button__bar"></div>
-					<div class="header__button__bar"></div>
+					<span class="header__button__bar"></span>
+					<span class="header__button__bar"></span>
+					<span class="header__button__bar"></span>
+					<span class="header__button__bar"></span>
 				</button>
 			</div>
-		</header> {{-- /header --}}
+		</header> {{-- /.header --}}
 
 		<main class="content">
-			<section class="services">
-				<div class="container">
-					{{-- Stuzkova --}}
-					<div class="services__item">
-						<div class="services__icon"><img src="{!! asset('images/site/icon_stuzkova-white.svg') !!}" alt="Stuzkova"></div>
-						<h2 class="services__title">{{ $stuzkova->title }}</h2>
-						<div class="services__description">{!! $stuzkova->body !!}</div>
-						<a href="{!! route('stuzkova') !!}" class="services__btn btn btn--secondary">Mám záujem</a>
+			<section class="service">
+				<div class="service__title">
+					<div class="service__title__image">
+						<img src="{!! asset('/images/site/' . $service->image) !!}" alt="{{ $service->title }}">
 					</div>
+					<h2 class="page-title__heading">{{ $service->title }}</h2>
+				</div> {{-- /.page-title --}}
 
-					{{-- Svadba --}}
-					<div class="services__item">
-						<div class="services__icon"><img src="{!! asset('images/site/icon_svadba-white.svg') !!}" alt="Svadba"></div>
-						<h2 class="services__title">{{ $svadba->title }}</h2>
-						<div class="services__description">{!! $svadba->body !!}</div>
-						<a href="{!! route('svadba') !!}" class="services__btn btn btn--secondary">Mám záujem</a>
-					</div>					
+				<div class="page-perex">
+					{!! $service->body !!}
+				</div> {{-- /.page-perex --}}
+		
+				<div class="page-services">
+					<div class="service service--photo">
+						<div class="service__icon">
+							<img src="{!! asset('/images/site/icon_camera.svg') !!}">
+						</div>
+						<div class="service__list">
+							{!! $service->photo_services !!}
+						</div>
+					</div> {{-- /.service--photo --}}
 
-					{{-- Udalost --}}
-					<div class="services__item">
-						<div class="services__icon"><img src="{!! asset('images/site/icon_udalost-white.svg') !!}" alt="Udalost"></div>
-						<h2 class="services__title">{{ $udalost->title }}</h2>
-						<div class="services__description">{!! $udalost->body !!}</div>
-						<a href="{!! route('udalost') !!}" class="services__btn btn btn--secondary">Mám záujem</a>
-					</div>
+					<div class="service service--video">
+						<div class="service__icon">
+							<img src="{!! asset('/images/site/icon_video.svg') !!}">
+						</div>
+						<div class="service__list">
+							{!! $service->video_services !!}
+						</div>
+					</div> {{-- /.service--video --}}
+
+					<div class="service service--dj">
+						<div class="service__icon">
+							<img src="{!! asset('/images/site/icon_dj.svg') !!}">
+						</div>
+						<div class="service__list">
+							{!! $service->dj_services !!}
+						</div>
+					</div> {{-- /.service--dj --}}				
+				</div> {{-- /.page-services --}}
+
+				<a href="{!! route('referencie') !!}" class="btn btn--primary">Zobraziť referencie</a>
+				
+				<h3 class="content-title">Cenník</h3>	
+
+				<div class="pricelist">
+					
+				</div>
+
+				<div class="page-travel-note">
+					{!! $service->note !!}
 				</div>
 			</section>
-		</main>										
-
+		</main>
+			
 		<footer class="footer">	
 			<div class="container">
 				<div class="footer__contact">

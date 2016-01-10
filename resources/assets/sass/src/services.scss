@@ -1,0 +1,106 @@
+/**
+ * Stuzkova
+ */
+.page-stuzkova {
+	.header {
+		background-image: url('/images/site/stuzkova_480.jpg');
+		background-size: cover;
+		background-position: 50% 50%;
+
+        @media 	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        		only screen and (min-resolution: 144dpi),
+        		(-webkit-min-device-pixel-ratio: 144),
+        		(min-resolution: 144dppx) {
+			background-image: url('/images/site/stuzkova_480@2x.jpg');
+        }		
+
+		@include breakpoint($breakpoint-landscape) {
+			background-image: url('/images/site/stuzkova_768.jpg');
+		}
+
+		@include breakpoint($breakpoint-medium) {
+			background-image: url('/images/site/stuzkova_1200.jpg');	
+		}
+
+		@include breakpoint($breakpoint-large) {
+			background-image: url('/images/site/stuzkova_1920.jpg');	
+		}
+
+		@include breakpoint($breakpoint-quadhd) {
+			background-image: url('/images/site/stuzkova_2560.jpg');	
+		}		
+	}
+}
+
+/**
+ * Svadba
+ */
+.page-svadba {
+	.header {
+		background-image: url('/images/site/svadba_480.jpg');
+		background-size: cover;
+		background-position: 70% 50%;
+
+        @media 	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        		only screen and (min-resolution: 144dpi),
+        		(-webkit-min-device-pixel-ratio: 144),
+        		(min-resolution: 144dppx) {
+			background-image: url('/images/site/svadba_480@2x.jpg');
+        }		
+
+		@include breakpoint($breakpoint-landscape) {
+			background-position: 50% 50%;
+			background-image: url('/images/site/svadba_768.jpg');
+		}
+
+		@include breakpoint($breakpoint-medium) {
+			background-image: url('/images/site/svadba_1200.jpg');	
+		}
+
+		@include breakpoint($breakpoint-large) {
+			background-image: url('/images/site/svadba_1920.jpg');	
+		}
+
+		@include breakpoint($breakpoint-quadhd) {
+			background-image: url('/images/site/svadba_2560.jpg');	
+		}		
+	}
+}
+
+/**
+ * Udalost
+ */
+.page-udalost {
+	.header {
+		background-image: url('/images/site/udalost_480.jpg');
+		background-size: cover;
+		background-position: 50% 50%;
+
+        @media 	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        		only screen and (min-resolution: 144dpi),
+        		(-webkit-min-device-pixel-ratio: 144),
+        		(min-resolution: 144dppx) {
+			background-image: url('/images/site/udalost_480@2x.jpg');
+        }		
+
+		@include breakpoint($breakpoint-landscape) {
+			background-image: url('/images/site/udalost_768.jpg');
+		}
+
+		@include breakpoint($breakpoint-medium) {
+			background-image: url('/images/site/udalost_1200.jpg');	
+		}
+
+		@include breakpoint($breakpoint-large) {
+			background-image: url('/images/site/udalost_1920.jpg');	
+		}
+
+		@include breakpoint($breakpoint-quadhd) {
+			background-image: url('/images/site/udalost_2560.jpg');	
+		}		
+	}
+}
+
+/**
+ * Layout
+ */

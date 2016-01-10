@@ -45,12 +45,12 @@
 	}
 }
 
-.service {
+.services__item {
 	text-align: center;
 	padding: 0 0 50px;
 
 	&:first-child {
-		padding-top: 80px;
+		padding-top: 90px;
 	}
 	
 	@include breakpoint($breakpoint-small) {
@@ -73,7 +73,7 @@
 	}
 }
 
-.service__icon {
+.services__icon {
 	img {
 		width: 80px;
 	}
@@ -99,7 +99,7 @@
 	}
 }
 
-.service__title {
+.services__title {
 	font-family: 'Nexa', 'Times New Roman', serif;
 	color: #fff;
 	font-size: 35px;
@@ -123,7 +123,7 @@
 	}		
 }
 
-.service__description {
+.services__description {
 	margin-bottom: 20px;
 	max-width: 300px;
 	margin: 0 auto;
@@ -135,7 +135,7 @@
 	}
 
 	@include breakpoint($breakpoint-large) {
-		max-width: 350px;
+		max-width: 340px;
 
 		p {
 			font-size: 14px;
@@ -151,7 +151,7 @@
 	}	
 }
 
-.service__btn {
+.services__btn {
 	@include breakpoint($breakpoint-small) {
 		position: absolute;		
 		bottom: 0;
@@ -163,4 +163,4 @@
 	@include breakpoint($breakpoint-full) {
 		width: 130px;
 	}
-}
+}	

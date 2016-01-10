@@ -84,7 +84,6 @@ class ServicesController extends BaseController
         }
 
         $data['user_id'] = \Auth::id();
-        $data['slug'] = Str::slug($data['title']);
 
         $service_id = $this->repository->create($data)->id;
 
@@ -157,7 +156,6 @@ class ServicesController extends BaseController
             }
 
             $data['user_id'] = \Auth::id();
-            $data['slug'] = Str::slug($data['title']);
             
             $service->update($data);
 

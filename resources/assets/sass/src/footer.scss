@@ -24,10 +24,7 @@
 	}	
 }
 
-/**
- * Contact
- */
-.contact {
+.footer__contact {
 	margin-bottom: 20px;
 
 	@include breakpoint($breakpoint-small) {
@@ -36,13 +33,13 @@
 	}	
 }
 
-.contact__list {
+.footer__contact__list {
 	@include breakpoint($breakpoint-small) {
 		display: inline-block;
 	}		
 }
 
-.contact__item {
+.footer__contact__item {
 	margin-bottom: 5px;
 	position: relative;
 
@@ -71,7 +68,7 @@
 	}
 }
 
-.contact__link {
+.footer__contact__link {
 	font-size: 13px;	
 	text-decoration: none;
 	color: #666;
@@ -91,7 +88,7 @@
 	}	
 }
 
-.contact__title {
+.footer__contact__title {
 	color: #666;
 	text-transform: uppercase;
 	margin: 0 0 10px;
@@ -113,10 +110,7 @@
 	}	
 }
 
-/**
- * Copyrights
- */
-.copyrights {
+.footer__copyrights {
 	@include breakpoint($breakpoint-small) {
 		width: 50%;
 		text-align: right;
@@ -124,7 +118,7 @@
 	}	
 }
 
-.copyrights__text {
+.footer__copyrights__text {
 	color: #666;
 	font-size: 13px;
 	display: block;

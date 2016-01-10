@@ -2,14 +2,9 @@ body {
 	background: #aaa;
 }
 
-body.sidebar--toggled {
-	height: 100vh; // To prevent scrolling while the sidebar is shown
-	overflow: hidden;
-}
-
 ul {
 	margin: 0;
-	padding: 0;
+	padding: 0 !important;
 	list-style: none;
 }
 
@@ -23,9 +18,6 @@ ul {
 	}
 }
 
-/**
- * Sidebar
- */
 .sidebar {
 	position: fixed; 
 	top: 0;
@@ -38,7 +30,7 @@ ul {
 	transition: .15s ease all;
 	
 	@include breakpoint($breakpoint-small) {
-		width: 230px;
+		width: 290px;
 		left: auto;
 	}
 }
@@ -47,18 +39,59 @@ ul {
 	transform: none;
 }
 
-.menu {
+.sidebar__button {
+	@extend .header__button;
+	
+	display: none;
+	position: absolute;
+	top: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	@include breakpoint($breakpoint-small) {
+		display: block;
+	}
+
+	@include breakpoint($breakpoint-medium) {
+		top: 50px;
+	}
+
+	@include breakpoint($breakpoint-full) {
+		top: 70px;
+	}
+
+	@include breakpoint(1600px) {
+		top: 90px;
+	}		
+}
+
+.sidebar__button__bar {
+	@extend .header__button__bar;
+
+	&:nth-child(1),
+	&:nth-child(4) {
+		opacity: 0;
+		top: 18px;
+	}
+
+	&:nth-child(2) {
+		transform: rotate(45deg);
+	}
+
+	&:nth-child(3) {
+		transform: rotate(-45deg);
+	}		
+}
+
+.sidebar__menu {
 	padding-left: 30px;
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
-	
-	@include breakpoint($breakpoint-small) {
-		padding-left: 40px;
-	}
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
 }
 
-.menu__item {
+.sidebar__menu__item {
 	margin-bottom: 25px;
 
 	&:last-child {
@@ -66,16 +99,18 @@ ul {
 	}
 }
 
-.menu__link {
+.sidebar__menu__link {
 	color: #fff;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 17px;
+	transition: .15s ease all;
+
+	&:hover {
+		color: $color-primary;
+	}
 }
 
-/**
- * Buttons
- */
 .btn {
 	display: inline-block;
 	text-decoration: none;

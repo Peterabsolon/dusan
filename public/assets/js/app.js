@@ -16,9 +16,11 @@ window.onload = function(){
 }
 
 $(document).ready(function(){
-	$('.btn-toggle-menu').on('click', function(){
-		$(this).toggleClass('btn-toggle-menu--toggled'); 
+	
+  $('button[data-action="toggle-menu"]').on('click', function(){
+		$(this).toggleClass('header__button--toggled'); 
 
     $('.sidebar, body').toggleClass('sidebar--toggled');
 	}); 
+  
 }); 

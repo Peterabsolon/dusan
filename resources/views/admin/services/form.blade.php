@@ -3,7 +3,7 @@
 @else
 {!! Form::open(['files' => true, 'route' => 'admin.services.store']) !!}
 @endif
-	<div class="form-group">
+{{-- 	<div class="form-group">
 		{!! Form::label('title', 'Title:') !!}
 		{!! Form::text('title', null, ['class' => 'form-control']) !!}
 		{!! $errors->first('title', '<div class="text-danger">:message</div>') !!}
@@ -12,22 +12,7 @@
 		{!! Form::label('slug', 'Slug:') !!}
 		{!! Form::text('slug', null, ['class' => 'form-control']) !!}
 		{!! $errors->first('slug', '<div class="text-danger">:message</div>') !!}
-	</div>
-	<div class="form-group">
-		{!! Form::label('', 'Image:') !!}
-		{!! Form::file('image', ['class' => 'input-file', 'id' => 'image']) !!}
-		<label for="image" class="btn btn-primary btn-upload"><i class="fa fa-upload"></i> <span>Choose a file</span></label>
-		{!! $errors->first('image', '<div class="text-danger">:message</div>') !!}
-	</div>
-	@if(isset($model))
-	<div class="form-group">
-		@if($model->image)
-		<div class="img-thumbnail img-maxwidth">
-			<img class="img-responsive" src="{!! asset('images/services/' . $model->image) !!}">
-		</div>
-		@endif
-	</div>
-	@endif	
+	</div> --}}
 	<div class="form-group">
 		{!! Form::label('body', 'Description:') !!}
 		{!! Form::textarea('body', null, ['class' => 'form-control summernote']) !!}

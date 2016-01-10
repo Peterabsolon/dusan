@@ -10,9 +10,7 @@ class Update extends Validator
     public function rules()
     {
         return [
-            'title' => 'required',
-            'slug' => 'required|unique:articles,slug,'.Request::segment(3),
-            'sort_order' => 'required',
+
         ];
     }
 }

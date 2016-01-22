@@ -94,6 +94,8 @@
 	background: #fff; 
 	position: absolute;
 	transition: .1s ease all;
+	left: 0;
+	border-radius: 2px;
 	
 	&:nth-child(1) { 
 		top: 0;

@@ -34,5 +34,18 @@ Route::group(['prefix' => config('admin.prefix', 'admin')], function () {
                 'destroy' => 'admin.services.destroy',				
 			],
 		]);
+
+		Route::resource('references', 'Admin\ReferencesController', [
+			'except' => 'show',
+			'names' => [
+				'index' => 'admin.references.index',
+                'create' => 'admin.references.create',
+                'store' => 'admin.references.store',
+                'show' => 'admin.references.show',
+                'update' => 'admin.references.update',
+                'edit' => 'admin.references.edit',
+                'destroy' => 'admin.references.destroy',				
+			],
+		]);		
 	});
 });

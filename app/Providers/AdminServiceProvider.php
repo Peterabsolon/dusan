@@ -28,5 +28,11 @@ class AdminServiceProvider extends ServiceProvider
             'App\Repositories\Admin\Services\ServiceRepository',
             'App\Repositories\Admin\Services\EloquentServiceRepository'
         );
+
+        // Bind admin references repository
+        $this->app->bind(
+            'App\Repositories\Admin\References\ReferenceRepository',
+            'App\Repositories\Admin\References\EloquentReferenceRepository'
+        );        
     }
 }

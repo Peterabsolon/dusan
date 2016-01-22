@@ -14,17 +14,26 @@ use App\Entities\Option;
  */
 class ServiceController extends Controller
 {
+    protected $services; 
+    protected $email;
+    protected $phone;
+
+    public function __construct() 
+    {
+        $this->services = Service::orderBy('sort_order')->get();
+
+		$this->email = Option::where('key', 'contact.email')->first()->value;
+        $this->phone = Option::where('key', 'contact.phone')->first()->value;        
+    }
+
 	public function stuzkova()
 	{
-		$services = Service::orderBy('sort_order')->get();
-
-		$email  = Option::where('key', 'contact.email')->first()->value;
-        $phone  = Option::where('key', 'contact.phone')->first()->value;
+		$service = $this->services[0];
 
 		$data = array(
-			'service' 	=> $services[0],
-			'email'		=> $email,
-			'phone'		=> $phone
+			'service' 	=> $service,
+			'email'		=> $this->email,
+			'phone'		=> $this->phone
 		);
 
 		return view('service', $data);
@@ -32,15 +41,12 @@ class ServiceController extends Controller
 
 	public function svadba()
 	{
-		$services = Service::orderBy('sort_order')->get();
-
-		$email  = Option::where('key', 'contact.email')->first()->value;
-        $phone  = Option::where('key', 'contact.phone')->first()->value;
+		$service = $this->services[1];
 
 		$data = array(
-			'service' 	=> $services[1],
-			'email'		=> $email,
-			'phone'		=> $phone
+			'service' 	=> $service,
+			'email'		=> $this->email,
+			'phone'		=> $this->phone
 		);
 
 		return view('service', $data);
@@ -48,15 +54,12 @@ class ServiceController extends Controller
 
 	public function udalost()
 	{
-		$services = Service::orderBy('sort_order')->get();
-
-		$email  = Option::where('key', 'contact.email')->first()->value;
-        $phone  = Option::where('key', 'contact.phone')->first()->value;
+		$service = $this->services[2];
 
 		$data = array(
-			'service' 	=> $services[2],
-			'email'		=> $email,
-			'phone'		=> $phone
+			'service' 	=> $service,
+			'email'		=> $this->email,
+			'phone'		=> $this->phone
 		);
 
 		return view('service', $data);

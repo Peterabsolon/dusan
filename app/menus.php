@@ -15,4 +15,5 @@ $rightMenu = Menu::instance('admin-menu-right');
  */
 
 $leftMenu->route('admin.services.index', 'Services', [], .5, ['icon' => 'fa fa-wrench']);
+$leftMenu->route('admin.references.index', 'References', [], .5, ['icon' => 'fa fa-star']);
 $leftMenu->route('admin.settings', 'Settings', [], 7, ['icon' => 'fa fa-cogs']);

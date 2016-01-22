@@ -89,6 +89,7 @@ ul {
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
 }
 
 .sidebar__menu__item {
@@ -112,23 +113,29 @@ ul {
 }
 
 .btn {
-	display: inline-block;
+	display: table;
+	margin: 0 auto;
 	text-decoration: none;
 	outline: none;
 	padding: 10px 35px;
-	font-size: 13px;
 	font-weight: bold;
 	border: 2px solid #fff;
 	border-radius: 50px;
 	transition: .15s ease all;
 
-	@include breakpoint($breakpoint-large) {
-		font-size: 14px;
-	}
-
 	@include breakpoint($breakpoint-quadhd) {
-		font-size: 16px;
 		padding: 13px 40px;
+	}	
+}
+
+.btn--primary {
+	color: $color-primary;
+	border-color: $color-primary;
+
+	&:hover {
+		text-shadow: none;
+		background: $color-primary;
+		color: #fff;
 	}	
 }
 

@@ -1005,7 +1005,7 @@ body > .header .logo .icon {
   color: #f9f9f9;
   color: rgba(255, 255, 255, 0.8);
   font-size: 17px;
-  text-shadow: 2px 2px 3px #333333;
+  text-shadow: 1px 1px 1px #333;
   margin-top: 10px;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > small {
@@ -3545,12 +3545,6 @@ fieldset[disabled] .btn-vk.active {
   display: flex;
 }
 
-.entry-group .entry-data {
-}
-
-.entry-group .entry-price-title {
-}
-
 .entry-group .entry-price-price {
   display: inline-block;
   width: 85px;
@@ -3580,7 +3574,7 @@ fieldset[disabled] .btn-vk.active {
 }
 
 .btn-upload {
-  width: 300px;
+  width: 100%;
   display: block;
 }
 
@@ -3611,13 +3605,38 @@ fieldset[disabled] .btn-vk.active {
   font-weight: bold;
 }
 
-/* Hide menu items with CSS to prevent modyfing /vendor/pingpong/admin package */
+/* Hide menu items with CSS to avoid modyfing /vendor/pingpong/admin package */
 .sidebar-menu li:nth-child(1),
-.sidebar-menu li:nth-child(3),
-.sidebar-menu li:nth-child(4) {
+.sidebar-menu li:nth-child(4),
+.sidebar-menu li:nth-child(5) {
   display: none;
 }
 
 .sidebar-menu li:nth-child(2) {
   border-top: 1px solid #dbdbdb !important;
+}
+
+.btn-entry-delete {
+  border-radius: 50%;
+  top: -12px;
+  right: -12px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  line-height: 15px;
+  font-size: 12px;
+  padding: 0;
+}
+
+.btn-entry-add {
+  width: 100%;
+}
+
+.well-photos {
+  width: 100%;
+  max-width: 300px;
+}
+
+.photos .panel {
+  position: relative;
 }

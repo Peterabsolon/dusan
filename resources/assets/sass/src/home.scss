@@ -15,7 +15,6 @@
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
-			width: 100%;
 		}	
 	}	
 
@@ -38,10 +37,6 @@
 	@include breakpoint($breakpoint-quadhd) {
 		background-image: url('/images/site/hero_2560.jpg');
 		height: calc(100vh - 70px);
-
-		.container {
-		
-		}
 	}
 }
 
@@ -124,14 +119,16 @@
 }
 
 .services__description {
-	margin-bottom: 20px;
 	max-width: 300px;
-	margin: 0 auto;
+	margin: 20px auto 0;
 	
 	p {
 		color: #fff;
-		font-size: 13px;
 		text-shadow: 1px 1px 5px rgba(0,0,0,.2);
+	}
+
+	br {
+		display: none;
 	}
 
 	@include breakpoint($breakpoint-large) {
@@ -152,6 +149,8 @@
 }
 
 .services__btn {
+	margin-top: 20px;
+
 	@include breakpoint($breakpoint-small) {
 		position: absolute;		
 		bottom: 0;

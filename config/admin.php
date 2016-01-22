@@ -40,4 +40,8 @@ return [
         'model' => 'App\Entities\Service',
         'perpage' => 10
     ],
+    'reference' => [ 
+        'model' => 'App\Entities\Reference',
+        'perpage' => 10
+    ],    
 ];

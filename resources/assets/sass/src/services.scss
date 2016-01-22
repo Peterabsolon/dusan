@@ -1,7 +1,7 @@
 /**
  * Stuzkova
  */
-.page-stuzkova {
+.page--stuzkova {
 	.header {
 		background-image: url('/images/site/stuzkova_480.jpg');
 		background-size: cover;
@@ -35,7 +35,7 @@
 /**
  * Svadba
  */
-.page-svadba {
+.page--svadba {
 	.header {
 		background-image: url('/images/site/svadba_480.jpg');
 		background-size: cover;
@@ -70,7 +70,7 @@
 /**
  * Udalost
  */
-.page-udalost {
+.page--udalost {
 	.header {
 		background-image: url('/images/site/udalost_480.jpg');
 		background-size: cover;
@@ -101,6 +101,283 @@
 	}
 }
 
-/**
- * Layout
- */
+.service {
+	background: #fff;
+	text-align: center;
+	padding-bottom: 40px;
+
+	.btn {
+		margin-top: 50px;
+	}
+
+	h3 {
+		margin-top: 50px;
+	}
+}
+
+.service-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 0 20px;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 25px;
+		height: 5px;
+		background: $color-primary;
+	}
+}
+
+.service-header__image {
+	img {
+		width: 60px;
+		height: auto;
+		display: block;
+	}
+}
+
+.service-header__title {
+	font-family: 'Nexa';
+	font-size: 30px;
+	color: $color-primary;
+	margin: 0 0 -15px 15px;
+}
+
+.service-body {
+	text-align: center;
+	margin-top: 30px;
+
+	p {
+		color: $color-text;
+	}
+
+	br {
+		display: none;
+	}
+
+	@include breakpoint($breakpoint-small) {
+		padding-bottom: 50px;
+
+		br {
+			display: inline;
+		}
+	}
+}
+
+.service-details {
+	margin-top: 30px;
+
+	@include breakpoint($breakpoint-small) {
+		display: flex;
+		
+	}
+}
+
+.service-detail {
+	margin-bottom: 40px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+	
+	@include breakpoint($breakpoint-small) {
+		width: calc(33.33% - 40px);
+		margin: 0 20px;
+	}	
+}
+
+.service-detail__icon {
+	width: 100%;
+	max-width: 230px;
+	margin: 0 auto;
+	position: relative;
+
+	img {
+		width: 70px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 60px;
+		height: 2px;
+		background: $color-primary; 
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+
+		@include breakpoint($breakpoint-medium) {
+			width: 70px;
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 70px;
+		height: 2px;
+		background: $color-primary; 
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+
+		@include breakpoint($breakpoint-small) {
+			width: 60px;
+		}		
+	}	
+}
+
+.service-detail__list {
+	margin-top: 20px;	
+
+	li {
+		text-align: center;
+		color: $color-text;
+		position: relative;
+		max-width: 320px;
+		margin: 0 auto 25px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -13px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 5px;
+			height: 5px;
+			background: $color-primary;
+			border-radius: 50%;
+		}
+
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	@include breakpoint($breakpoint-small) {
+		margin: 40px auto;
+		max-width: 320px;
+	}	
+}
+
+.service-pricelist {
+	@include breakpoint($breakpoint-small) {
+		display: flex;
+	}	
+}
+
+.service-pricelist__list {
+	@include breakpoint($breakpoint-small) {
+		width: 50%;
+		margin: 50px auto;
+	}
+}
+
+.service-pricelist__item {
+	display: flex;
+	max-width: 320px;
+	margin: 0 auto 15px;
+}
+
+.service-pricelist__title {
+	margin-right: 10px;
+	color: $color-text;
+}
+
+.service-pricelist__dots {
+	height: 2px;
+	background: url('/images/site/dots.png');
+	margin-top: 12px;
+	flex: 1;
+}
+
+.service-pricelist__price {
+	margin-left: 10px;
+	color: $color-primary;
+}	
+
+.service-note {
+	color: $color-text;
+	margin-top: 30px;
+}
+
+.service-packages {
+	padding-bottom: 30px;
+
+	@include breakpoint($breakpoint-small) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.service-package {
+	padding: 30px 0;
+
+	@include breakpoint($breakpoint-small) {
+		width: 50%;
+	}
+}
+
+.service-package__icon {
+	width: 230px;
+	margin: 0 auto;
+	position: relative;
+
+	img {
+		width: 30px;
+		display: block;
+		margin: 30px auto 0;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 70px;
+		height: 2px;
+		background: $color-primary; 
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: 70px;
+		height: 2px;
+		background: $color-primary; 
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+	}	
+}
+
+.service-package__number {
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: translateY(-50%);
+	color: $color-text;
+}
+
+.service-package__body {
+	color: $color-text;
+	margin-top: 20px;
+}
+
+.service-package__price {
+	color: $color-primary;
+}

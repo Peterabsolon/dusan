@@ -57,3 +57,25 @@ input,
 button {
     font-family: 'Montserrat';
 }
+
+body,
+html {
+    font-size: 13px;
+
+    @include breakpoint($breakpoint-large) {
+        font-size: 14px;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    color: $color-text;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}

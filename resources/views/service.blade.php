@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page-{{ $service->slug }}">
+<html class="page page--{{ $service->slug }}">
 	<head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,56 +26,117 @@
 
 		<main class="content">
 			<section class="service">
-				<div class="service__title">
-					<div class="service__title__image">
-						<img src="{!! asset('/images/site/' . $service->image) !!}" alt="{{ $service->title }}">
+				<div class="container">
+					<div class="service-header">
+						<div class="service-header__image">
+							<img src="{!! asset('/images/site/' . $service->image) !!}" alt="{{ $service->title }}">
+						</div>
+						<h2 class="service-header__title">{{ $service->title }}</h2>
 					</div>
-					<h2 class="page-title__heading">{{ $service->title }}</h2>
-				</div> {{-- /.page-title --}}
 
-				<div class="page-perex">
-					{!! $service->body !!}
-				</div> {{-- /.page-perex --}}
-		
-				<div class="page-services">
-					<div class="service service--photo">
-						<div class="service__icon">
-							<img src="{!! asset('/images/site/icon_camera.svg') !!}">
+					<div class="service-body">
+						{!! $service->body !!}
+					</div>
+			
+					<div class="service-details">
+						<div class="service-detail">
+							<div class="service-detail__icon">
+								<img src="{!! asset('/images/site/icon_camera.svg') !!}">
+							</div>
+							<div class="service-detail__list">
+								{!! $service->photo_services !!}
+							</div>
 						</div>
-						<div class="service__list">
-							{!! $service->photo_services !!}
-						</div>
-					</div> {{-- /.service--photo --}}
 
-					<div class="service service--video">
-						<div class="service__icon">
-							<img src="{!! asset('/images/site/icon_video.svg') !!}">
+						<div class="service-detail">
+							<div class="service-detail__icon">
+								<img src="{!! asset('/images/site/icon_video.svg') !!}">
+							</div>
+							<div class="service-detail__list">
+								{!! $service->video_services !!}
+							</div>
 						</div>
-						<div class="service__list">
-							{!! $service->video_services !!}
+
+						<div class="service-detail">
+							<div class="service-detail__icon">
+								<img src="{!! asset('/images/site/icon_dj.svg') !!}">
+							</div>
+							<div class="service-detail__list">
+								{!! $service->dj_services !!}
+							</div>
+						</div> 
+					</div>
+
+					<a href="{!! route('referencie') !!}" class="btn-references btn btn--primary">Referencie</a>
+	
+					@if (($service->prices_left->count() > 0) || ($service->prices_right->count() > 0))
+						<h3>Cenník</h3>	
+
+						<div class="service-pricelist">
+							@if ($service->prices_left->count() > 0)
+								<ul class="service-pricelist__list">
+									@foreach($service->prices_left as $price)
+										<li class="service-pricelist__item">
+											<div class="service-pricelist__title">
+												{{ $price->title }}
+											</div>
+											<div class="service-pricelist__dots">
+											</div>
+											<div class="service-pricelist__price">
+												{{ $price->price }} &euro;
+											</div>																						
+										</li>
+									@endforeach									
+								</ul>
+							@endif
+
+							@if ($service->prices_right->count() > 0)
+								<ul class="service-pricelist__list">
+									@foreach($service->prices_right as $price)
+										<li class="service-pricelist__item">
+											<div class="service-pricelist__title">
+												{{ $price->title }}
+											</div>
+											<div class="service-pricelist__dots">
+											</div>
+											<div class="service-pricelist__price">
+												{{ $price->price }} &euro;
+											</div>																						
+										</li>
+									@endforeach									
+								</ul>
+							@endif							
 						</div>
-					</div> {{-- /.service--video --}}
+					@endif
 
-					<div class="service service--dj">
-						<div class="service__icon">
-							<img src="{!! asset('/images/site/icon_dj.svg') !!}">
+					@if (!empty($service->note)) 
+						<div class="service-note">
+							{!! $service->note !!}
 						</div>
-						<div class="service__list">
-							{!! $service->dj_services !!}
+					@endif
+	
+					@if ($service->packages->count() > 0)
+						<h3>Výhodné balíky</h3>
+
+						<div class="service-packages">
+							@foreach ($service->packages as $key => $package)
+								<div class="service-package">
+									<div class="service-package__icon">
+										<img src="{!! asset('/images/site/icon_package.svg') !!}">
+										<div class="service-package__number">
+											{{ $key + 1 }}
+										</div>
+									</div>
+									<div class="service-package__body">
+										{!! $package->body !!}
+									</div>
+									<div class="service-package__price">
+										{{ $package->price }} &euro;
+									</div>									
+								</div>
+							@endforeach
 						</div>
-					</div> {{-- /.service--dj --}}				
-				</div> {{-- /.page-services --}}
-
-				<a href="{!! route('referencie') !!}" class="btn btn--primary">Zobraziť referencie</a>
-				
-				<h3 class="content-title">Cenník</h3>	
-
-				<div class="pricelist">
-					
-				</div>
-
-				<div class="page-travel-note">
-					{!! $service->note !!}
+					@endif
 				</div>
 			</section>
 		</main>

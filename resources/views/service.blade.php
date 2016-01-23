@@ -34,13 +34,13 @@
 						<h2 class="page-title">{{ $service->title }}</h2>
 					</div>
 
-					<div class="perex wow fadeInUp" data-wow-delay="200ms">
+					<div class="perex wow fadeInUp" data-wow-delay="150ms">
 						{!! $service->body !!}
 					</div>
 			
 					<div class="service-descriptions">
 						@if (!empty($service->photo_services))
-							<div class="service-description wow fadeInUp" data-wow-delay="400ms">
+							<div class="service-description wow fadeInUp" data-wow-delay="300ms">
 								<div class="service-description__icon">
 									<img src="{!! asset('/images/site/icon_camera.svg') !!}">
 								</div>
@@ -51,7 +51,7 @@
 						@endif
 
 						@if (!empty($service->video_services))
-							<div class="service-description wow fadeInUp" data-wow-delay="400ms">
+							<div class="service-description wow fadeInUp" data-wow-delay="450ms">
 								<div class="service-description__icon">
 									<img src="{!! asset('/images/site/icon_video.svg') !!}">
 								</div>
@@ -62,7 +62,7 @@
 						@endif
 
 						@if (!empty($service->dj_services))
-							<div class="service-description wow fadeInUp" data-wow-delay="400ms">
+							<div class="service-description wow fadeInUp" data-wow-delay="600ms">
 								<div class="service-description__icon">
 									<img src="{!! asset('/images/site/icon_dj.svg') !!}">
 								</div>
@@ -73,14 +73,14 @@
 						@endif
 					</div>
 
-					<a href="{!! route('referencie') !!}" class="btn-references btn btn--primary wow fadeInUp" data-wow-delay="600ms">Referencie</a>
+					<a href="{!! route('referencie') !!}" class="btn-references btn btn--primary wow fadeInUp" data-wow-delay="200ms">Referencie</a>
 	
 					@if (($service->prices_left->count() > 0) || ($service->prices_right->count() > 0))
-						<h3 class="wow fadeInUp">Cenník</h3>	
+						<h3 class="wow fadeInUp" data-wow-delay="200ms">Cenník</h3>	
 
 						<div class="pricelist">
 							@if ($service->prices_left->count() > 0)
-								<ul class="pricelist__list wow fadeInUp" data-wow-delay="800ms">
+								<ul class="pricelist__list wow fadeInUp" data-wow-delay="200ms">
 									@foreach($service->prices_left as $price)
 										<li class="pricelist__item">
 											<div class="pricelist__title">
@@ -97,7 +97,7 @@
 							@endif
 
 							@if ($service->prices_right->count() > 0)
-								<ul class="pricelist__list wow fadeInUp" data-wow-delay="800ms">
+								<ul class="pricelist__list wow fadeInUp" data-wow-delay="350ms">
 									@foreach($service->prices_right as $price)
 										<li class="pricelist__item">
 											<div class="pricelist__title">
@@ -116,17 +116,18 @@
 					@endif
 
 					@if (!empty($service->note)) 
-						<div class="travel-note wow fadeInUp" data-wow-delay="1000ms">
+						<div class="travel-note wow fadeInUp" data-wow-delay="200ms">
 							{!! $service->note !!}
 						</div>
 					@endif
 	
 					@if ($service->packages->count() > 0)
-						<h3 class="wow fadeInUp" data-wow-delay="1200ms">Výhodné balíky</h3>
+						<h3 class="wow fadeInUp" data-wow-delay="200ms">Výhodné balíky</h3>
 
-						<div class="packages wow fadeInUp" data-wow-delay="1400ms">
+						<div class="packages wow fadeInUp">
 							@foreach ($service->packages as $key => $package)
-								<div class="package">
+								<?php $package_delay = 200; ?>
+								<div class="package wow fadeInUp" data-wow-delay="{{ $package_delay }}ms">
 									<div class="package__icon">
 										<img src="{!! asset('/images/site/icon_package.svg') !!}">
 										<div class="package__number">
@@ -140,23 +141,26 @@
 										{{ $package->price }} &euro;
 									</div>									
 								</div>
+								<?php $package_delay += 150; ?>
 							@endforeach
 						</div>
 					@endif
+
+					<a href="{!! route('kontakt') !!}" class="btn-references btn btn--primary wow fadeInUp" data-wow-delay="200ms">Kontakt</a>
 				</div>
 			</section>
 		</main>
 			
 		<footer class="footer">	
 			<div class="container">
-				<div class="contact-info">
+				<div class="contact-info wow fadeIn">
 					<h3 class="contact-info__title">Kontakt</h3>
 					<ul class="contact-info__list">
 						<li class="contact-info__item"><a class="contact-info__link" href="tel:{{ $phone }}">{{ $phone }}</a></li>
 						<li class="contact-info__item"><a class="contact-info__link" href="mailto:{{ $email }}">{{ $email }}</a></li>
 					</ul>
 				</div>
-				<div class="copyrights">
+				<div class="copyrights wow fadeIn">
 					<span class="copyrights__text">&copy; 2015 Beznazvu.sk. Všetky práva vyhradené.</span>
 				</div>
 			</div>

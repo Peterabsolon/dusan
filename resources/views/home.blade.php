@@ -28,7 +28,7 @@
 			<section class="homepage-boxes">
 				<div class="container">
 					{{-- Stuzkova --}}
-					<div class="homepage-box wow fadeInUp">
+					<div class="homepage-box wow fadeInUp" data-wow-delay="50ms">
 						<div class="homepage-box__icon"><img src="{!! asset('images/site/icon_stuzkova-white.svg') !!}" alt="Stuzkova"></div>
 						<h2 class="homepage-box__title">{{ $stuzkova->title }}</h2>
 						<div class="homepage-box__description">{!! $stuzkova->body !!}</div>
@@ -36,7 +36,7 @@
 					</div>
 
 					{{-- Svadba --}}
-					<div class="homepage-box wow fadeInUp" data-wow-delay="200ms">
+					<div class="homepage-box wow fadeInUp" data-wow-delay="150ms">
 						<div class="homepage-box__icon"><img src="{!! asset('images/site/icon_svadba-white.svg') !!}" alt="Svadba"></div>
 						<h2 class="homepage-box__title">{{ $svadba->title }}</h2>
 						<div class="homepage-box__description">{!! $svadba->body !!}</div>
@@ -44,7 +44,7 @@
 					</div>					
 
 					{{-- Udalost --}}
-					<div class="homepage-box wow fadeInUp" data-wow-delay="400ms">
+					<div class="homepage-box wow fadeInUp" data-wow-delay="300ms">
 						<div class="homepage-box__icon"><img src="{!! asset('images/site/icon_udalost-white.svg') !!}" alt="Udalost"></div>
 						<h2 class="homepage-box__title">{{ $udalost->title }}</h2>
 						<div class="homepage-box__description">{!! $udalost->body !!}</div>
@@ -54,7 +54,7 @@
 			</section>
 		</main>										
 
-		<footer class="footer">	
+		<footer class="footer ">	
 			<div class="container">
 				<div class="contact-info">
 					<h3 class="contact-info__title">Kontakt</h3>

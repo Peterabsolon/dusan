@@ -32,14 +32,14 @@
 						<h2 class="page-title">Referencie</h2>
 					</div>
 
-					@foreach ($references as $reference)
+					@foreach ($references as $reference_key => $reference)
 						<div class="reference">
-							<h2 class="content-title wow fadeInUp">{{ $reference->title }}</h2>
-							<div class="reference__body wow fadeInUp">{!! $reference->body !!}</div>
+							<h2 class="content-title wow fadeInUp" data-wow-delay="150ms">{{ $reference->title }}</h2>
+							<div class="reference__body wow fadeInUp" data-wow-delay="300ms">{!! $reference->body !!}</div>
 							@if ($reference->photos->count() > 0)
-							<div class="reference__photos">
+							<div class="reference__photos lightgallery">
 								@foreach ($reference->photos as $photo_key => $photo)
-								<div class="reference__photo wow fadeInUp">
+								<div class="reference__photo wow fadeInUp lightgallery__item" data-wow-delay="450ms" data-src="{!! asset('images/photos/' . $photo->photo_large) !!}">
 									<picture>
 										<source srcset="{!! asset('images/photos/' . $photo->photo_large) !!}" media="(min-width: 1200px)">
 										<source srcset="{!! asset('images/photos/' . $photo->photo_medium) !!}" media="(min-width: 768px)">
@@ -52,6 +52,8 @@
 							@endif
 						</div>
 					@endforeach
+
+					<a href="{!! route('kontakt') !!}" class="btn-references btn btn--primary wow fadeInUp" data-wow-delay="200ms">Kontakt</a>
 				</div>
 			</section>
 		</main>

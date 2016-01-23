@@ -35,14 +35,17 @@ elixir(function(mix) {
 
 		.scripts([
 			'vendor/jquery.min.js',
+			'vendor/jquery.visible.min.js',
 			'vendor/smoothscroll.js',
 			'vendor/picturefill.min.js',
 			'vendor/fastclick.js',
-			'vendor/wow.js'
+			'vendor/wow.js',
+			'vendor/lightgallery/lightgallery.min.js',
+			'vendor/lightgallery/lg-fullscreen.min.js'
 		], 'public/assets/js/libs.js');
 });
 
-// TODO
+// TODO 
 gulp.task('sprites', function () {
     return gulp.src('testik/*.svg')
         .pipe(svgSprite())

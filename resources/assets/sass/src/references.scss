@@ -1,6 +1,6 @@
 .page--references {
 	.header {
-		background-image: url('/images/site/kontakt_480.jpg');
+		background-image: url('/images/site/references_480.jpg');
 		background-size: cover;
 		background-position: 50% 50%;
 
@@ -8,23 +8,23 @@
         		only screen and (min-resolution: 144dpi),
         		(-webkit-min-device-pixel-ratio: 144),
         		(min-resolution: 144dppx) {
-			background-image: url('/images/site/kontakt_480@2x.jpg');
+			background-image: url('/images/site/references_480@2x.jpg');
         }		
 
 		@include breakpoint($breakpoint-landscape) {
-			background-image: url('/images/site/kontakt_768.jpg');
+			background-image: url('/images/site/references_768.jpg');
 		}
 
 		@include breakpoint($breakpoint-medium) {
-			background-image: url('/images/site/kontakt_1200.jpg');	
+			background-image: url('/images/site/references_1200.jpg');	
 		}
 
 		@include breakpoint($breakpoint-large) {
-			background-image: url('/images/site/kontakt_1920.jpg');	
+			background-image: url('/images/site/references_1920.jpg');	
 		}
 
 		@include breakpoint($breakpoint-quadhd) {
-			background-image: url('/images/site/kontakt_2560.jpg');	
+			background-image: url('/images/site/references_2560.jpg');	
 		}		
 	}
 }

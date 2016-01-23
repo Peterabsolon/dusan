@@ -8,7 +8,6 @@ ul {
 	list-style: none;
 }
 
-// Visibility fix
 .wow {
    visibility: hidden;
 }
@@ -41,8 +40,9 @@ ul {
 	opacity: 0;
 	
 	@include breakpoint($breakpoint-small) {
-		width: 290px;
+		max-width: 290px; // This is set dynamically through javascript
 		left: auto;
+		width: 100%;
 	}
 }
 
@@ -74,6 +74,18 @@ ul {
 	font-weight: bold;
 	font-size: 17px;
 	transition: .15s ease all;
+
+	@include breakpoint($breakpoint-small) {
+		font-size: 13px;
+	}
+
+	@include breakpoint($breakpoint-medium) {
+		font-size: 14px;
+	}
+
+	@include breakpoint(1600px) {
+		font-size: 17px;
+	}
 
 	&:hover {
 		color: $color-primary;

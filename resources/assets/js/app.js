@@ -13,6 +13,15 @@ function isElementInViewport (el) {
     );
 }
 
+// Calculate sidebar width based on menu-button--open right offset so the menu-button--close is on the same position as --open
+function resizeSidebar() {
+  var offset_right = ($(window).width() - ($('.menu-button--open').offset().left + $('.menu-button--open').outerWidth()));
+
+  var sidebar_width = (offset_right * 2) + 37;
+
+  $('.sidebar').css('max-width', sidebar_width);
+}
+
 $(document).ready(function () {
 
   // Toggle sidebar menu
@@ -35,4 +44,6 @@ $(document).ready(function () {
       $(element).attr('data-wow-delay', '200ms');
     }
   });
+
+  resizeSidebar();
 }); 

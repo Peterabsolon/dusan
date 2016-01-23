@@ -15,7 +15,7 @@
 			<div class="container">
 				<h1 class="logo"><a href="{!! route('home') !!}"><span>Bez</span>názvu</a></h1>
 
-				<button type="button" class="menu-button" data-action="toggle-menu">
+				<button type="button" class="menu-button menu-button--open" data-action="toggle-menu">
 					<div class="menu-button__bar"></div>
 					<div class="menu-button__bar"></div>
 					<div class="menu-button__bar"></div>

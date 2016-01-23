@@ -641,8 +641,9 @@ ul {
 
 @media (min-width: 768px) {
   .sidebar {
-    width: 290px;
+    max-width: 290px;
     left: auto;
+    width: 100%;
   }
 }
 
@@ -676,6 +677,24 @@ ul {
   font-weight: bold;
   font-size: 17px;
   transition: .15s ease all;
+}
+
+@media (min-width: 768px) {
+  .menu__link {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 992px) {
+  .menu__link {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .menu__link {
+    font-size: 17px;
+  }
 }
 
 .menu__link:hover {
@@ -778,7 +797,7 @@ ul {
 
 @media (min-width: 768px) {
   .header {
-    padding: 40px 20px;
+    padding: 40px 30px;
   }
 }
 
@@ -788,15 +807,21 @@ ul {
   }
 }
 
+@media (min-width: 1200px) {
+  .header {
+    padding: 50px 50px;
+  }
+}
+
 @media (min-width: 1400px) {
   .header {
-    padding: 70px 40px;
+    padding: 70px 50px;
   }
 }
 
 @media (min-width: 1600px) {
   .header {
-    padding: 90px 40px;
+    padding: 90px 50px;
   }
 }
 
@@ -1726,38 +1751,38 @@ ul {
 }
 
 .page--references .header {
-  background-image: url("/images/site/kontakt_480.jpg");
+  background-image: url("/images/site/references_480.jpg");
   background-size: cover;
   background-position: 50% 50%;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 144), (min-resolution: 144dppx) {
   .page--references .header {
-    background-image: url("/images/site/kontakt_480@2x.jpg");
+    background-image: url("/images/site/references_480@2x.jpg");
   }
 }
 
 @media (min-width: 480px) {
   .page--references .header {
-    background-image: url("/images/site/kontakt_768.jpg");
+    background-image: url("/images/site/references_768.jpg");
   }
 }
 
 @media (min-width: 992px) {
   .page--references .header {
-    background-image: url("/images/site/kontakt_1200.jpg");
+    background-image: url("/images/site/references_1200.jpg");
   }
 }
 
 @media (min-width: 1200px) {
   .page--references .header {
-    background-image: url("/images/site/kontakt_1920.jpg");
+    background-image: url("/images/site/references_1920.jpg");
   }
 }
 
 @media (min-width: 1921px) {
   .page--references .header {
-    background-image: url("/images/site/kontakt_2560.jpg");
+    background-image: url("/images/site/references_2560.jpg");
   }
 }
 

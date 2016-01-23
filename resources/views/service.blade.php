@@ -15,7 +15,7 @@
 			<div class="container">
 				<h1 class="logo"><a href="{!! route('home') !!}"><span>Bez</span>názvu</a></h1>
 
-				<button type="button" class="menu-button" data-action="toggle-menu">
+				<button type="button" class="menu-button menu-button--open" data-action="toggle-menu">
 					<div class="menu-button__bar"></div>
 					<div class="menu-button__bar"></div>
 					<div class="menu-button__bar"></div>
@@ -39,32 +39,38 @@
 					</div>
 			
 					<div class="service-descriptions">
-						<div class="service-description wow fadeInUp" data-wow-delay="400ms">
-							<div class="service-description__icon">
-								<img src="{!! asset('/images/site/icon_camera.svg') !!}">
+						@if (!empty($service->photo_services))
+							<div class="service-description wow fadeInUp" data-wow-delay="400ms">
+								<div class="service-description__icon">
+									<img src="{!! asset('/images/site/icon_camera.svg') !!}">
+								</div>
+								<div class="service-description__list">
+									{!! $service->photo_services !!}
+								</div>
 							</div>
-							<div class="service-description__list">
-								{!! $service->photo_services !!}
-							</div>
-						</div>
+						@endif
 
-						<div class="service-description wow fadeInUp" data-wow-delay="400ms">
-							<div class="service-description__icon">
-								<img src="{!! asset('/images/site/icon_video.svg') !!}">
+						@if (!empty($service->video_services))
+							<div class="service-description wow fadeInUp" data-wow-delay="400ms">
+								<div class="service-description__icon">
+									<img src="{!! asset('/images/site/icon_video.svg') !!}">
+								</div>
+								<div class="service-description__list">
+									{!! $service->video_services !!}
+								</div>
 							</div>
-							<div class="service-description__list">
-								{!! $service->video_services !!}
-							</div>
-						</div>
+						@endif
 
-						<div class="service-description wow fadeInUp" data-wow-delay="400ms">
-							<div class="service-description__icon">
-								<img src="{!! asset('/images/site/icon_dj.svg') !!}">
-							</div>
-							<div class="service-description__list">
-								{!! $service->dj_services !!}
-							</div>
-						</div> 
+						@if (!empty($service->dj_services))
+							<div class="service-description wow fadeInUp" data-wow-delay="400ms">
+								<div class="service-description__icon">
+									<img src="{!! asset('/images/site/icon_dj.svg') !!}">
+								</div>
+								<div class="service-description__list">
+									{!! $service->dj_services !!}
+								</div>
+							</div> 
+						@endif
 					</div>
 
 					<a href="{!! route('referencie') !!}" class="btn-references btn btn--primary wow fadeInUp" data-wow-delay="600ms">Referencie</a>

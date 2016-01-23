@@ -28,7 +28,7 @@
 			<section class="services">
 				<div class="container">
 					{{-- Stuzkova --}}
-					<div class="services__item">
+					<div class="services__item wow fadeInUp">
 						<div class="services__icon"><img src="{!! asset('images/site/icon_stuzkova-white.svg') !!}" alt="Stuzkova"></div>
 						<h2 class="services__title">{{ $stuzkova->title }}</h2>
 						<div class="services__description">{!! $stuzkova->body !!}</div>
@@ -36,7 +36,7 @@
 					</div>
 
 					{{-- Svadba --}}
-					<div class="services__item">
+					<div class="services__item wow fadeInUp" data-wow-delay="200ms">
 						<div class="services__icon"><img src="{!! asset('images/site/icon_svadba-white.svg') !!}" alt="Svadba"></div>
 						<h2 class="services__title">{{ $svadba->title }}</h2>
 						<div class="services__description">{!! $svadba->body !!}</div>
@@ -44,7 +44,7 @@
 					</div>					
 
 					{{-- Udalost --}}
-					<div class="services__item">
+					<div class="services__item wow fadeInUp" data-wow-delay="400ms">
 						<div class="services__icon"><img src="{!! asset('images/site/icon_udalost-white.svg') !!}" alt="Udalost"></div>
 						<h2 class="services__title">{{ $udalost->title }}</h2>
 						<div class="services__description">{!! $udalost->body !!}</div>

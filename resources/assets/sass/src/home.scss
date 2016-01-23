@@ -43,26 +43,10 @@
 .services__item {
 	text-align: center;
 	padding: 0 0 50px;
-	transform: translateY(50px);
-	opacity: 0;
-	transition: .8s ease;
-
-	&.loaded {
-		transform: none;
-		opacity: 1;
-	}
 
 	&:first-child {
 		padding-top: 90px;
 	}
-
-	&:nth-child(2) {
-		transition-delay: 150ms;
-	}
-
-	&:nth-child(3) {
-		transition-delay: 300ms;
-	}	
 	
 	@include breakpoint($breakpoint-small) {
 		padding: 0 15px 60px;

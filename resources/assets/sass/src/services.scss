@@ -104,14 +104,14 @@
 .service {
 	background: #fff;
 	text-align: center;
-	padding-bottom: 40px;
+	padding-bottom: 60px;
 
 	.btn {
-		margin-top: 50px;
+		margin-top: 20px;
 	}
 
 	h3 {
-		margin-top: 50px;
+		margin-top: 70px;
 	}
 }
 
@@ -151,7 +151,7 @@
 
 .service-body {
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 50px;
 
 	p {
 		color: $color-text;
@@ -162,7 +162,7 @@
 	}
 
 	@include breakpoint($breakpoint-small) {
-		padding-bottom: 50px;
+		padding-bottom: 70px;
 
 		br {
 			display: inline;
@@ -171,7 +171,7 @@
 }
 
 .service-details {
-	margin-top: 30px;
+	margin-top: 50px;
 
 	@include breakpoint($breakpoint-small) {
 		display: flex;
@@ -180,7 +180,7 @@
 }
 
 .service-detail {
-	margin-bottom: 40px;
+	margin-bottom: 60px;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -236,14 +236,14 @@
 }
 
 .service-detail__list {
-	margin-top: 20px;	
+	margin-top: 40px;	
 
 	li {
 		text-align: center;
 		color: $color-text;
 		position: relative;
 		max-width: 320px;
-		margin: 0 auto 25px;
+		margin: 0 auto 30px;
 
 		&::after {
 			content: '';
@@ -265,13 +265,13 @@
 	}
 
 	@include breakpoint($breakpoint-small) {
-		margin: 40px auto;
+		margin: 60px auto;
 		max-width: 320px;
 	}	
 }
 
 .service-pricelist {
-	margin-top: 20px;
+	margin-top: 40px;
 	@include breakpoint($breakpoint-small) {
 		display: flex;
 	}	
@@ -280,14 +280,14 @@
 .service-pricelist__list {
 	@include breakpoint($breakpoint-small) {
 		width: 50%;
-		margin: 50px auto;
+		margin: 40px auto;
 	}
 }
 
 .service-pricelist__item {
 	display: flex;
 	max-width: 320px;
-	margin: 0 auto 15px;
+	margin: 0 auto 20px;
 }
 
 .service-pricelist__title {
@@ -309,11 +309,11 @@
 
 .service-note {
 	color: $color-text;
-	margin-top: 30px;
+	margin-top: 50px;
 }
 
 .service-packages {
-	padding-bottom: 30px;
+	padding-bottom: 50px;
 
 	@include breakpoint($breakpoint-small) {
 		display: flex;
@@ -322,7 +322,7 @@
 }
 
 .service-package {
-	padding: 30px 0;
+	padding: 50px 0;
 
 	@include breakpoint($breakpoint-small) {
 		width: 50%;
@@ -337,7 +337,7 @@
 	img {
 		width: 30px;
 		display: block;
-		margin: 30px auto 0;
+		margin: 50px auto 0;
 	}
 
 	&::before {

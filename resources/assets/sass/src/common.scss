@@ -33,6 +33,7 @@ ul {
 	z-index: 1;
 	transform: translateX(100%);
 	transition: .15s ease all;
+	opacity: 0;
 	
 	@include breakpoint($breakpoint-small) {
 		width: 290px;
@@ -42,6 +43,7 @@ ul {
 
 .sidebar.sidebar--toggled {
 	transform: none;
+	opacity: 1;
 }
 
 .sidebar__button {

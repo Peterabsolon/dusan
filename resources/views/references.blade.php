@@ -39,7 +39,7 @@
 							@if ($reference->photos->count() > 0)
 							<div class="reference__photos">
 								@foreach ($reference->photos as $photo_key => $photo)
-								<div class="img-wrapper wow fadeInUp">
+								<div class="img-wrapper wow fadeInUp gallery-<?php echo $reference_key ?>">
 									<picture>
 										<source srcset="{!! asset('images/photos/' . $photo->photo_large) !!}" media="(min-width: 1200px)">
 										<source srcset="{!! asset('images/photos/' . $photo->photo_medium) !!}" media="(min-width: 768px)">
@@ -96,4 +96,11 @@
 	</script>
     <script src="{!! asset('assets/js/libs.js') !!}"></script>
     <script src="{!! asset('assets/js/app.js') !!}"></script>	
+
+	<script>
+    <?php foreach ($references as $reference_key => $reference) { ?>
+		$('.gallery-<?php echo $reference_key ?>').featherlightGallery();
+    <?php } ?>
+	</script>
+
 </html>

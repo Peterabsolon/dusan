@@ -1,5 +1,3 @@
-@import url(vendor/featherlight.min.css);
-@import url(vendor/featherlight.gallery.min.css);
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 /**
@@ -634,6 +632,7 @@ ul {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
   transition: .15s ease all;
+  opacity: 0;
 }
 
 @media (min-width: 768px) {
@@ -646,6 +645,7 @@ ul {
 .sidebar.sidebar--toggled {
   -webkit-transform: none;
   transform: none;
+  opacity: 1;
 }
 
 .sidebar__button {
@@ -1206,28 +1206,10 @@ ul {
 .services__item {
   text-align: center;
   padding: 0 0 50px;
-  -webkit-transform: translateY(50px);
-  transform: translateY(50px);
-  opacity: 0;
-  transition: .8s ease;
-}
-
-.services__item.loaded {
-  -webkit-transform: none;
-  transform: none;
-  opacity: 1;
 }
 
 .services__item:first-child {
   padding-top: 90px;
-}
-
-.services__item:nth-child(2) {
-  transition-delay: 150ms;
-}
-
-.services__item:nth-child(3) {
-  transition-delay: 300ms;
 }
 
 @media (min-width: 768px) {
@@ -1490,15 +1472,15 @@ ul {
 .service {
   background: #fff;
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 
 .service .btn {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .service h3 {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .service-header {
@@ -1542,7 +1524,7 @@ ul {
 
 .service-body {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .service-body p {
@@ -1555,7 +1537,7 @@ ul {
 
 @media (min-width: 768px) {
   .service-body {
-    padding-bottom: 50px;
+    padding-bottom: 70px;
   }
 
   .service-body br {
@@ -1564,7 +1546,7 @@ ul {
 }
 
 .service-details {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 @media (min-width: 768px) {
@@ -1576,7 +1558,7 @@ ul {
 }
 
 .service-detail {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .service-detail:last-child {
@@ -1640,7 +1622,7 @@ ul {
 }
 
 .service-detail__list {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .service-detail__list li {
@@ -1648,7 +1630,7 @@ ul {
   color: #959595;
   position: relative;
   max-width: 320px;
-  margin: 0 auto 25px;
+  margin: 0 auto 30px;
 }
 
 .service-detail__list li::after {
@@ -1670,13 +1652,13 @@ ul {
 
 @media (min-width: 768px) {
   .service-detail__list {
-    margin: 40px auto;
+    margin: 60px auto;
     max-width: 320px;
   }
 }
 
 .service-pricelist {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 @media (min-width: 768px) {
@@ -1690,7 +1672,7 @@ ul {
 @media (min-width: 768px) {
   .service-pricelist__list {
     width: 50%;
-    margin: 50px auto;
+    margin: 40px auto;
   }
 }
 
@@ -1699,7 +1681,7 @@ ul {
   display: -ms-flexbox;
   display: flex;
   max-width: 320px;
-  margin: 0 auto 15px;
+  margin: 0 auto 20px;
 }
 
 .service-pricelist__title {
@@ -1723,11 +1705,11 @@ ul {
 
 .service-note {
   color: #959595;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .service-packages {
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 @media (min-width: 768px) {
@@ -1742,7 +1724,7 @@ ul {
 }
 
 .service-package {
-  padding: 30px 0;
+  padding: 50px 0;
 }
 
 @media (min-width: 768px) {
@@ -1760,7 +1742,7 @@ ul {
 .service-package__icon img {
   width: 30px;
   display: block;
-  margin: 30px auto 0;
+  margin: 50px auto 0;
 }
 
 .service-package__icon::before {

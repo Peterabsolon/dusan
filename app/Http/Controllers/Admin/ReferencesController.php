@@ -116,7 +116,7 @@ class ReferencesController extends BaseController
 
         $reference_id = $this->repository->create($data)->id;
 
-        if (\Input::has('photos')) 
+        if (\Input::has('photos'))
         {
             $photos = \Input::get('photos');
 
@@ -131,6 +131,11 @@ class ReferencesController extends BaseController
                     $this->repository->savePhotos($photos, $reference_id);
                 }
             }
+        }
+
+        if (\Input::has('videos'))
+        {
+            $this->repository->saveVideos($data['videos'], $reference_id);
         }
 
         return $this->redirect('references.index');
@@ -223,6 +228,13 @@ class ReferencesController extends BaseController
                     }
                 }
             }
+
+            $this->repository->deleteVideos($id);
+
+            if (\Input::has('videos'))
+            {
+                $this->repository->saveVideos($data['videos'], $id);
+            }            
 
             return $this->redirect('references.index');
         } catch (ModelNotFoundException $e) {

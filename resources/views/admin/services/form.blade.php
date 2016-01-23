@@ -32,7 +32,7 @@
 	</div>	
 	<div class="form-group">
 		{!! Form::label('prices_left', 'Price list left column:') !!}
-		<div class="entry-group">
+		<div class="entry-group entry-group-prices">
 			<?php $price_left_key = 0; ?>
 			@if(isset($model))			
 				@foreach($model->prices_left as $key => $price)
@@ -49,7 +49,7 @@
 	</div>	
 	<div class="form-group">
 		{!! Form::label('prices_right', 'Price list right column:') !!}
-		<div class="entry-group">
+		<div class="entry-group entry-group-prices">
 			<?php $price_right_key = 0; ?>
 			@if(isset($model))
 				@foreach($model->prices_right as $key => $price)
@@ -90,6 +90,7 @@
 	<div class="form-group">
 		{!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
 	</div>
+	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 {!! Form::close() !!}
 
 @section('script')

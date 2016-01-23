@@ -3560,7 +3560,8 @@ fieldset[disabled] .btn-vk.active {
 
 .btn-entry-add .fa,
 .btn-entry-delete[data-type="package"] .fa,
-.btn-upload .fa {
+.btn-upload .fa,
+.btn-video-delete .fa {
   margin-right: 5px;
 }
 
@@ -3580,6 +3581,11 @@ fieldset[disabled] .btn-vk.active {
 
 .img-maxwidth .img-responsive {
   max-width: 600px !important;
+}
+
+.entry-group-packages,
+.entry-group-prices {
+  max-width: 500px;
 }
 
 .entry-group-packages .well {
@@ -3628,8 +3634,31 @@ fieldset[disabled] .btn-vk.active {
   padding: 0;
 }
 
+.btn-video-delete {
+  position: static;
+  right: 0;
+  top: 0;
+  border-radius: 3px;
+  margin: 0;  
+  width: auto;
+  padding: 6px 12px;
+  height: auto;
+  line-height: 1.42857143;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.btn-video-delete .fa {
+  margin-right: 5px;
+}
+
+.btn-video-add {
+  
+}
+
 .btn-entry-add {
   width: 100%;
+  max-width: 500px;
 }
 
 .well-photos {
@@ -3639,4 +3668,8 @@ fieldset[disabled] .btn-vk.active {
 
 .photos .panel {
   position: relative;
+}
+
+.videos {
+  max-width: 500px;
 }

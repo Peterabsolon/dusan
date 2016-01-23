@@ -19,6 +19,26 @@
 		{!! $errors->first('sort_order', '<div class="text-danger">:message</div>') !!}
 	</div>	
 	<div class="form-group">
+		{!! Form::label('videos', 'Videos:') !!}
+		<div class="videos">
+			<?php $video_key = 0; ?>
+			@if (isset($model) && $model->videos)
+				@foreach ($model->videos as $key => $video)
+					<div class="well">
+						<div class="input-group">
+							<span class="input-group-addon">https://www.youtube.com/watch?v=</span>
+							{!! Form::text('videos[' . $key . '][link]', $video->link, ['class' => 'entry-video-link form-control', 'placeholder' => 'Link']) !!}
+						</div>
+						<div class="text-right">
+							<button type="button" class="btn btn-danger btn-entry-delete btn-video-delete" data-type="video"><i class="fa fa-close"></i> Remove video</button>
+						</div>
+					</div>			
+				@endforeach
+			@endif
+		</div>
+		<button type="button" class="btn btn-success btn-entry-add" data-type="video"><i class="fa fa-plus"></i> Add video</button>
+	</div>	
+	<div class="form-group">
 		{!! Form::label('photos', 'Photos:') !!}
 		<div class="well well-photos">
 			<div class="photos">
@@ -40,12 +60,13 @@
 					@endforeach
 				@endif
 			</div>
-			<button type="button" class="btn btn-success btn-entry-add" data-type="photo"><i class="fa fa-plus"></i> Add photo</button>			
+			<button type="button" class="btn btn-success btn-entry-add btn-video-add" data-type="photo"><i class="fa fa-plus"></i> Add photo</button>
 		</div>
 	</div>
 	<div class="form-group">
 		{!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
 	</div>
+	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 {!! Form::close() !!}
 
 @section('script')
@@ -90,25 +111,45 @@
 
 			var photo_key = {{ $photo_key }};
 
+			var video_key = {{ $video_key }};
+
 			$('.btn-entry-add').on('click', function(){
 				var type = $(this).data('type');
-
-				var html  = '<div class="panel panel-default">';
-					html +=		'<div class="panel-body">';
 								
 				if (type == 'photo') {
+					var html  = '<div class="panel panel-default">';
+						html +=	'<div class="panel-body">';
+
 					html += '<input type="hidden" name="photos[]" value="">';
 					html += '<input type="file" id="file-photo-' + photo_key + '" class="input-file" name="file-photo-' + photo_key + '">';
 					html += '<label for="file-photo-' + photo_key + '" class="btn btn-primary btn-upload"><i class="fa fa-upload"></i> <span>Choose a file</span></label>';
 					html += '<button type="button" class="btn btn-danger btn-entry-delete" data-type="photo"><i class="fa fa-close"></i></button>';
 						
 					photo_key++;
+
+					html += '</div>'; // panel-body
+					html += '</div>'; // panel
+
+					$('.photos').append(html);					
+				} 
+
+				else if (type == 'video') {
+					var html = '<div class="well">';
+
+					html += '<div class="input-group">';
+					html += 	'<span class="input-group-addon">https://www.youtube.com/watch?v=</span>';
+					html += 	'<input type="text" name="videos[' + video_key + '][link]" class="entry-video-link form-control" placeholder="Link">';
+					html += '</div>';
+					html += '<div class="text-right">';
+					html += 	'<button type="button" class="btn btn-danger btn-entry-delete btn-video-delete" data-type="video"><i class="fa fa-close"></i> Remove video</button>';
+					html += '</div>';
+
+					video_key++;
+
+					html += '</div>';
+
+					$('.videos').append(html);					
 				}
-
-				html += 	'</div>';
-				html += '</div>';
-
-				$('.photos').append(html);
 
 				enableFileButtons();
 			});
@@ -117,10 +158,16 @@
 				var type = $(this).data('type');
 
 				if (type == 'photo') {
+					$(this).closest('.panel').remove();
+					
 					photo_key--;
+				} else if (type == 'video') {
+					$(this).closest('.well').remove();
+
+					video_key--;
 				}
 
-				$(this).closest('.panel').remove();
+				
 			});
 		});
 	</script>

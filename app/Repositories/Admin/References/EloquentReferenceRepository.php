@@ -101,7 +101,18 @@ class EloquentReferenceRepository implements ReferenceRepository
         return $this->getModel()->savePhotos($photos, $reference_id);
     }
 
-    public function deletePhotos($reference_id) {
+    public function deletePhotos($reference_id) 
+    {
         return $this->getModel()->deletePhotos($reference_id);
     }
+
+    public function saveVideos($videos, $reference_id)
+    {
+        return $this->getModel()->saveVideos($videos, $reference_id);
+    }
+
+    public function deleteVideos($reference_id) 
+    {
+        return $this->getModel()->deleteVideos($reference_id);
+    }    
 }

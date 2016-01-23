@@ -69,7 +69,15 @@ class Reference extends Model
     public function photos()
     {
         return $this->hasMany('App\Entities\Photo');
-    }    
+    } 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function videos()
+    {
+        return $this->hasMany('App\Entities\Video');
+    }        
 
     /**
      * @return void
@@ -96,4 +104,29 @@ class Reference extends Model
 
         return $this;
     }
+
+    /**
+     * @return void
+     */
+    public function deleteVideos($reference_id)
+    {
+        DB::table('videos')->where('reference_id', $reference_id)->delete();
+    }      
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function saveVideos($videos, $reference_id)
+    {
+        foreach ($videos as $video) {
+            DB::table('videos')->insert(
+                array(
+                    'reference_id'      => $reference_id,
+                    'link'              => $video['link']
+                )
+            );
+        }
+
+        return $this;
+    }    
 }

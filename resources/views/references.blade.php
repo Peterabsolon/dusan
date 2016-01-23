@@ -36,10 +36,23 @@
 						<div class="reference">
 							<h2 class="content-title wow fadeInUp" data-wow-delay="150ms">{{ $reference->title }}</h2>
 							<div class="reference__body wow fadeInUp" data-wow-delay="300ms">{!! $reference->body !!}</div>
+							
+							@if ($reference->videos->count() > 0)
+							<div class="reference__videos">
+								@foreach ($reference->videos as $video_key => $video)
+								<div class="reference__video wow fadeInUp" data-wow-delay="450ms">
+									<iframe width="420" height="315"
+										src="http://www.youtube.com/embed/{{ $video->link }}" frameborder="0" allowfullscreen>
+									</iframe>
+								</div>
+								@endforeach
+							</div>
+							@endif
+
 							@if ($reference->photos->count() > 0)
 							<div class="reference__photos lightgallery">
 								@foreach ($reference->photos as $photo_key => $photo)
-								<div class="reference__photo wow fadeInUp lightgallery__item" data-wow-delay="450ms" data-src="{!! asset('images/photos/' . $photo->photo_large) !!}">
+								<div class="reference__photo wow fadeInUp lightgallery__item" data-wow-delay="600ms" data-src="{!! asset('images/photos/' . $photo->photo_large) !!}">
 									<picture>
 										<source srcset="{!! asset('images/photos/' . $photo->photo_large) !!}" media="(min-width: 1200px)">
 										<source srcset="{!! asset('images/photos/' . $photo->photo_medium) !!}" media="(min-width: 768px)">

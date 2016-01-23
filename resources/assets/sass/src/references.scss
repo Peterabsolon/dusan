@@ -61,20 +61,20 @@
 		justify-content: space-between;
 	}
 
-	.img-wrapper {
-		@include breakpoint($breakpoint-small) {
-			width: calc(50% - 5px);
-		}
-
-		@include breakpoint($breakpoint-medium) {
-			width: calc(33.33% - 8px);
-		}
-	}	
-
 	img {
 		max-width: 100%;
 	    border: 1px solid #CCC;
 	    margin: -1px -1px 6px;		
 	    cursor: pointer;
+	}
+}
+
+.reference__photo {
+	@include breakpoint($breakpoint-small) {
+		width: calc(50% - 5px);
+	}
+
+	@include breakpoint($breakpoint-medium) {
+		width: calc(33.33% - 8px);
 	}
 }

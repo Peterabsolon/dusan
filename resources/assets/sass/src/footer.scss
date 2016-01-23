@@ -24,7 +24,7 @@
 	}	
 }
 
-.footer__contact {
+.contact-info {
 	margin-bottom: 20px;
 
 	@include breakpoint($breakpoint-small) {
@@ -33,13 +33,13 @@
 	}	
 }
 
-.footer__contact__list {
+.contact-info__list {
 	@include breakpoint($breakpoint-small) {
 		display: inline-block;
 	}		
 }
 
-.footer__contact__item {
+.contact-info__item {
 	margin-bottom: 5px;
 	position: relative;
 
@@ -68,7 +68,7 @@
 	}
 }
 
-.footer__contact__link {
+.contact-info__link {
 	font-size: 13px;	
 	text-decoration: none;
 	color: #666;
@@ -88,7 +88,7 @@
 	}	
 }
 
-.footer__contact__title {
+.contact-info__title {
 	color: #666;
 	text-transform: uppercase;
 	margin: 0 0 10px;
@@ -110,7 +110,7 @@
 	}	
 }
 
-.footer__copyrights {
+.copyrights {
 	@include breakpoint($breakpoint-small) {
 		width: 50%;
 		text-align: right;
@@ -118,7 +118,7 @@
 	}	
 }
 
-.footer__copyrights__text {
+.copyrights__text {
 	color: #666;
 	font-size: 13px;
 	display: block;

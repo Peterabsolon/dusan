@@ -38,9 +38,7 @@ elixir(function(mix) {
 			'vendor/smoothscroll.js',
 			'vendor/picturefill.min.js',
 			'vendor/fastclick.js',
-			'vendor/wow.js',
-			'vendor/featherlight.min.js',
-			'vendor/featherlight.gallery.min.js'
+			'vendor/wow.js'
 		], 'public/assets/js/libs.js');
 });
 

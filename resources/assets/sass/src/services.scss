@@ -1,6 +1,3 @@
-/**
- * Stuzkova
- */
 .page--stuzkova {
 	.header {
 		background-image: url('/images/site/stuzkova_480.jpg');
@@ -32,9 +29,6 @@
 	}
 }
 
-/**
- * Svadba
- */
 .page--svadba {
 	.header {
 		background-image: url('/images/site/svadba_480.jpg');
@@ -67,9 +61,6 @@
 	}
 }
 
-/**
- * Udalost
- */
 .page--udalost {
 	.header {
 		background-image: url('/images/site/udalost_480.jpg');
@@ -115,41 +106,7 @@
 	}
 }
 
-.service-header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 40px 0 20px;
-	position: relative;
-
-	&::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 25px;
-		height: 5px;
-		background: $color-primary;
-	}
-}
-
-.service-header__image {
-	img {
-		width: 60px;
-		height: auto;
-		display: block;
-	}
-}
-
-.service-header__title {
-	font-family: 'Nexa';
-	font-size: 30px;
-	color: $color-primary;
-	margin: 0 0 -15px 15px;
-}
-
-.service-body {
+.perex {
 	text-align: center;
 	margin-top: 50px;
 
@@ -170,7 +127,7 @@
 	}
 }
 
-.service-details {
+.service-descriptions {
 	margin-top: 50px;
 
 	@include breakpoint($breakpoint-small) {
@@ -179,7 +136,7 @@
 	}
 }
 
-.service-detail {
+.service-description {
 	margin-bottom: 60px;
 
 	&:last-child {
@@ -192,7 +149,7 @@
 	}	
 }
 
-.service-detail__icon {
+.service-description__icon {
 	width: 100%;
 	max-width: 230px;
 	margin: 0 auto;
@@ -222,7 +179,7 @@
 	&::after {
 		content: '';
 		position: absolute;
-		width: 70px;
+		width: 60px;
 		height: 2px;
 		background: $color-primary; 
 		top: 50%;
@@ -230,12 +187,12 @@
 		right: 0;
 
 		@include breakpoint($breakpoint-small) {
-			width: 60px;
+			width: 70px;
 		}		
 	}	
 }
 
-.service-detail__list {
+.service-description__list {
 	margin-top: 40px;	
 
 	li {
@@ -270,49 +227,49 @@
 	}	
 }
 
-.service-pricelist {
+.pricelist {
 	margin-top: 40px;
 	@include breakpoint($breakpoint-small) {
 		display: flex;
 	}	
 }
 
-.service-pricelist__list {
+.pricelist__list {
 	@include breakpoint($breakpoint-small) {
 		width: 50%;
 		margin: 40px auto;
 	}
 }
 
-.service-pricelist__item {
+.pricelist__item {
 	display: flex;
 	max-width: 320px;
 	margin: 0 auto 20px;
 }
 
-.service-pricelist__title {
+.pricelist__title {
 	margin-right: 10px;
 	color: $color-text;
 }
 
-.service-pricelist__dots {
+.pricelist__dots {
 	height: 2px;
 	background: url('/images/site/dots.png');
 	margin-top: 12px;
 	flex: 1;
 }
 
-.service-pricelist__price {
+.pricelist__price {
 	margin-left: 10px;
 	color: $color-primary;
 }	
 
-.service-note {
+.travel-note {
 	color: $color-text;
 	margin-top: 50px;
 }
 
-.service-packages {
+.packages {
 	padding-bottom: 50px;
 
 	@include breakpoint($breakpoint-small) {
@@ -321,7 +278,7 @@
 	}
 }
 
-.service-package {
+.package {
 	padding: 50px 0;
 
 	@include breakpoint($breakpoint-small) {
@@ -329,7 +286,7 @@
 	}
 }
 
-.service-package__icon {
+.package__icon {
 	width: 230px;
 	margin: 0 auto;
 	position: relative;
@@ -363,7 +320,7 @@
 	}	
 }
 
-.service-package__number {
+.package__number {
 	position: absolute;
 	text-align: center;
 	top: 50%;
@@ -374,11 +331,11 @@
 	color: $color-text;
 }
 
-.service-package__body {
+.package__body {
 	color: $color-text;
 	margin-top: 20px;
 }
 
-.service-package__price {
+.package__price {
 	color: $color-primary;
 }

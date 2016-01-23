@@ -1,14 +1,16 @@
-/**
- * Services
- */
-.services {
+.homepage-boxes {
 	background: url('/images/site/hero_mobile.jpg');
 	background-size: cover;
 	background-position: 50% 50%;
+
+	@media #{$breakpoint-retina} {
+		background-image: url('/images/site/hero_mobile@2x.jpg');
+	}
 	
 	@include breakpoint($breakpoint-small) {
 		background-image: url('/images/site/hero_1200.jpg');
 		height: calc(100vh - 50px);	
+		background-size: cover;
 		
 		.container {
 			display: flex;
@@ -40,7 +42,7 @@
 	}
 }
 
-.services__item {
+.homepage-box {
 	text-align: center;
 	padding: 0 0 50px;
 
@@ -68,7 +70,7 @@
 	}
 }
 
-.services__icon {
+.homepage-box__icon {
 	img {
 		width: 80px;
 	}
@@ -94,7 +96,7 @@
 	}
 }
 
-.services__title {
+.homepage-box__title {
 	font-family: 'Nexa', 'Times New Roman', serif;
 	color: #fff;
 	font-size: 35px;
@@ -118,7 +120,7 @@
 	}		
 }
 
-.services__description {
+.homepage-box__description {
 	max-width: 300px;
 	margin: 20px auto 0;
 	
@@ -148,7 +150,7 @@
 	}	
 }
 
-.services__btn {
+.homepage-box__btn {
 	margin-top: 20px;
 
 	@include breakpoint($breakpoint-small) {

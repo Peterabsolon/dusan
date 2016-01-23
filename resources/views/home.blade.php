@@ -13,42 +13,42 @@
 
 		<header class="header">
 			<div class="container">
-				<h1 class="header__logo"><a href="{!! route('home') !!}"><span>Bez</span>názvu</a></h1>
+				<h1 class="logo"><a href="{!! route('home') !!}"><span>Bez</span>názvu</a></h1>
 
-				<button type="button" class="header__button" data-action="toggle-menu">
-					<div class="header__button__bar"></div>
-					<div class="header__button__bar"></div>
-					<div class="header__button__bar"></div>
-					<div class="header__button__bar"></div>
+				<button type="button" class="menu-button" data-action="toggle-menu">
+					<div class="menu-button__bar"></div>
+					<div class="menu-button__bar"></div>
+					<div class="menu-button__bar"></div>
+					<div class="menu-button__bar"></div>
 				</button>
 			</div>
 		</header> {{-- /header --}}
 
 		<main class="content">
-			<section class="services">
+			<section class="homepage-boxes">
 				<div class="container">
 					{{-- Stuzkova --}}
-					<div class="services__item wow fadeInUp">
-						<div class="services__icon"><img src="{!! asset('images/site/icon_stuzkova-white.svg') !!}" alt="Stuzkova"></div>
-						<h2 class="services__title">{{ $stuzkova->title }}</h2>
-						<div class="services__description">{!! $stuzkova->body !!}</div>
-						<a href="{!! route('stuzkova') !!}" class="services__btn btn btn--secondary">Mám záujem</a>
+					<div class="homepage-box wow fadeInUp">
+						<div class="homepage-box__icon"><img src="{!! asset('images/site/icon_stuzkova-white.svg') !!}" alt="Stuzkova"></div>
+						<h2 class="homepage-box__title">{{ $stuzkova->title }}</h2>
+						<div class="homepage-box__description">{!! $stuzkova->body !!}</div>
+						<a href="{!! route('stuzkova') !!}" class="homepage-box__btn btn btn--secondary">Mám záujem</a>
 					</div>
 
 					{{-- Svadba --}}
-					<div class="services__item wow fadeInUp" data-wow-delay="200ms">
-						<div class="services__icon"><img src="{!! asset('images/site/icon_svadba-white.svg') !!}" alt="Svadba"></div>
-						<h2 class="services__title">{{ $svadba->title }}</h2>
-						<div class="services__description">{!! $svadba->body !!}</div>
-						<a href="{!! route('svadba') !!}" class="services__btn btn btn--secondary">Mám záujem</a>
+					<div class="homepage-box wow fadeInUp" data-wow-delay="200ms">
+						<div class="homepage-box__icon"><img src="{!! asset('images/site/icon_svadba-white.svg') !!}" alt="Svadba"></div>
+						<h2 class="homepage-box__title">{{ $svadba->title }}</h2>
+						<div class="homepage-box__description">{!! $svadba->body !!}</div>
+						<a href="{!! route('svadba') !!}" class="homepage-box__btn btn btn--secondary">Mám záujem</a>
 					</div>					
 
 					{{-- Udalost --}}
-					<div class="services__item wow fadeInUp" data-wow-delay="400ms">
-						<div class="services__icon"><img src="{!! asset('images/site/icon_udalost-white.svg') !!}" alt="Udalost"></div>
-						<h2 class="services__title">{{ $udalost->title }}</h2>
-						<div class="services__description">{!! $udalost->body !!}</div>
-						<a href="{!! route('udalost') !!}" class="services__btn btn btn--secondary">Mám záujem</a>
+					<div class="homepage-box wow fadeInUp" data-wow-delay="400ms">
+						<div class="homepage-box__icon"><img src="{!! asset('images/site/icon_udalost-white.svg') !!}" alt="Udalost"></div>
+						<h2 class="homepage-box__title">{{ $udalost->title }}</h2>
+						<div class="homepage-box__description">{!! $udalost->body !!}</div>
+						<a href="{!! route('udalost') !!}" class="homepage-box__btn btn btn--secondary">Mám záujem</a>
 					</div>
 				</div>
 			</section>
@@ -56,34 +56,34 @@
 
 		<footer class="footer">	
 			<div class="container">
-				<div class="footer__contact">
-					<h3 class="footer__contact__title">Kontakt</h3>
-					<ul class="footer__contact__list">
-						<li class="footer__contact__item"><a class="footer__contact__link" href="tel:{{ $phone }}">{{ $phone }}</a></li>
-						<li class="footer__contact__item"><a class="footer__contact__link" href="mailto:{{ $email }}">{{ $email }}</a></li>
+				<div class="contact-info">
+					<h3 class="contact-info__title">Kontakt</h3>
+					<ul class="contact-info__list">
+						<li class="contact-info__item"><a class="contact-info__link" href="tel:{{ $phone }}">{{ $phone }}</a></li>
+						<li class="contact-info__item"><a class="contact-info__link" href="mailto:{{ $email }}">{{ $email }}</a></li>
 					</ul>
 				</div>
-				<div class="footer__copyrights">
-					<span class="footer__copyrights__text">&copy; 2015 Beznazvu.sk. Všetky práva vyhradené.</span>
+				<div class="copyrights">
+					<span class="copyrights__text">&copy; 2015 Beznazvu.sk. Všetky práva vyhradené.</span>
 				</div>
 			</div>
 		</footer> {{-- /footer --}}
 
 		<aside class="sidebar">
-			<button class="sidebar__button" data-action="toggle-menu">
-				<div class="sidebar__button__bar"></div>
-				<div class="sidebar__button__bar"></div>
-				<div class="sidebar__button__bar"></div>
-				<div class="sidebar__button__bar"></div>				
+			<button class="menu-button menu-button--close" data-action="toggle-menu">
+				<div class="menu-button__bar"></div>
+				<div class="menu-button__bar"></div>
+				<div class="menu-button__bar"></div>
+				<div class="menu-button__bar"></div>				
 			</button>
 
-			<ul class="sidebar__menu">
-				<li class="sidebar__menu__item"><a class="sidebar__menu__link" href="{!! route('home') !!}">Domov</a></li>
-				<li class="sidebar__menu__item"><a class="sidebar__menu__link" href="{!! route('stuzkova') !!}">Stužková</a></li>
-				<li class="sidebar__menu__item"><a class="sidebar__menu__link" href="{!! route('svadba') !!}">Svadba</a></li>
-				<li class="sidebar__menu__item"><a class="sidebar__menu__link" href="{!! route('udalost') !!}">Udalosť</a></li>
-				<li class="sidebar__menu__item"><a class="sidebar__menu__link" href="{!! route('referencie') !!}">Referencie</a></li>
-				<li class="sidebar__menu__item"><a class="sidebar__menu__link" href="{!! route('kontakt') !!}">Kontakt</a></li>
+			<ul class="menu">
+				<li class="menu__item"><a class="menu__link" href="{!! route('home') !!}">Domov</a></li>
+				<li class="menu__item"><a class="menu__link" href="{!! route('stuzkova') !!}">Stužková</a></li>
+				<li class="menu__item"><a class="menu__link" href="{!! route('svadba') !!}">Svadba</a></li>
+				<li class="menu__item"><a class="menu__link" href="{!! route('udalost') !!}">Udalosť</a></li>
+				<li class="menu__item"><a class="menu__link" href="{!! route('referencie') !!}">Referencie</a></li>
+				<li class="menu__item"><a class="menu__link" href="{!! route('kontakt') !!}">Kontakt</a></li>
 			</ul> {{-- /menu --}}
 		</aside>
 	</body>

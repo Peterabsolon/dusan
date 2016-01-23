@@ -8,6 +8,11 @@ ul {
 	list-style: none;
 }
 
+// Visibility fix
+.wow {
+   visibility: hidden;
+}
+
 .container {
 	padding: 0 15px;
 	max-width: 1600px;
@@ -46,51 +51,7 @@ ul {
 	opacity: 1;
 }
 
-.sidebar__button {
-	@extend .header__button;
-	
-	display: none;
-	position: absolute;
-	top: 40px;
-	left: 50%;
-	transform: translateX(-50%);
-
-	@include breakpoint($breakpoint-small) {
-		display: block;
-	}
-
-	@include breakpoint($breakpoint-medium) {
-		top: 50px;
-	}
-
-	@include breakpoint($breakpoint-full) {
-		top: 70px;
-	}
-
-	@include breakpoint(1600px) {
-		top: 90px;
-	}		
-}
-
-.sidebar__button__bar {
-	@extend .header__button__bar;
-
-	&:nth-child(1),
-	&:nth-child(4) {
-		opacity: 0;
-		top: 18px;
-	}
-
-	&:nth-child(2) {
-		transform: rotate(45deg);
-	}
-
-	&:nth-child(3) {
-		transform: rotate(-45deg);
-	}		
-}
-
-.sidebar__menu {
+.menu {
 	padding-left: 30px;
 	position: absolute;
 	top: 50%;
@@ -99,7 +60,7 @@ ul {
 	text-align: center;
 }
 
-.sidebar__menu__item {
+.menu__item {
 	margin-bottom: 25px;
 
 	&:last-child {
@@ -107,7 +68,7 @@ ul {
 	}
 }
 
-.sidebar__menu__link {
+.menu__link {
 	color: #fff;
 	text-decoration: none;
 	font-weight: bold;

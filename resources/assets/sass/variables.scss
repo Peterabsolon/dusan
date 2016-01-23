@@ -7,3 +7,5 @@ $breakpoint-medium: 992px;
 $breakpoint-large: 1200px;
 $breakpoint-full: 1400px;
 $breakpoint-quadhd: 1921px;
+
+$breakpoint-retina: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 144), (min-resolution: 144dppx)";

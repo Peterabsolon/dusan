@@ -27,19 +27,19 @@
 		<main class="content">
 			<section class="service">
 				<div class="container">
-					<div class="page-header">
+					<div class="page-header wow fadeInUp">
 						<div class="page-icon">
 							<img src="{!! asset('/images/site/' . $service->image) !!}" alt="{{ $service->title }}">
 						</div>					
 						<h2 class="page-title">{{ $service->title }}</h2>
 					</div>
 
-					<div class="service-body">
+					<div class="service-body wow fadeInUp">
 						{!! $service->body !!}
 					</div>
 			
 					<div class="service-details">
-						<div class="service-detail">
+						<div class="service-detail wow fadeInUp">
 							<div class="service-detail__icon">
 								<img src="{!! asset('/images/site/icon_camera.svg') !!}">
 							</div>
@@ -48,7 +48,7 @@
 							</div>
 						</div>
 
-						<div class="service-detail">
+						<div class="service-detail wow fadeInUp">
 							<div class="service-detail__icon">
 								<img src="{!! asset('/images/site/icon_video.svg') !!}">
 							</div>
@@ -57,7 +57,7 @@
 							</div>
 						</div>
 
-						<div class="service-detail">
+						<div class="service-detail wow fadeInUp">
 							<div class="service-detail__icon">
 								<img src="{!! asset('/images/site/icon_dj.svg') !!}">
 							</div>
@@ -67,14 +67,14 @@
 						</div> 
 					</div>
 
-					<a href="{!! route('referencie') !!}" class="btn-references btn btn--primary">Referencie</a>
+					<a href="{!! route('referencie') !!}" class="btn-references btn btn--primary wow fadeInUp">Referencie</a>
 	
 					@if (($service->prices_left->count() > 0) || ($service->prices_right->count() > 0))
-						<h3>Cenník</h3>	
+						<h3 class="wow fadeInUp">Cenník</h3>	
 
 						<div class="service-pricelist">
 							@if ($service->prices_left->count() > 0)
-								<ul class="service-pricelist__list">
+								<ul class="service-pricelist__list wow fadeInUp">
 									@foreach($service->prices_left as $price)
 										<li class="service-pricelist__item">
 											<div class="service-pricelist__title">
@@ -91,7 +91,7 @@
 							@endif
 
 							@if ($service->prices_right->count() > 0)
-								<ul class="service-pricelist__list">
+								<ul class="service-pricelist__list wow fadeInUp">
 									@foreach($service->prices_right as $price)
 										<li class="service-pricelist__item">
 											<div class="service-pricelist__title">
@@ -110,15 +110,15 @@
 					@endif
 
 					@if (!empty($service->note)) 
-						<div class="service-note">
+						<div class="service-note wow fadeInUp">
 							{!! $service->note !!}
 						</div>
 					@endif
 	
 					@if ($service->packages->count() > 0)
-						<h3>Výhodné balíky</h3>
+						<h3 class="wow fadeInUp">Výhodné balíky</h3>
 
-						<div class="service-packages">
+						<div class="service-packages wow fadeInUp">
 							@foreach ($service->packages as $key => $package)
 								<div class="service-package">
 									<div class="service-package__icon">

@@ -39,17 +39,42 @@
 }
 
 .reference__body {
-	margin-top: 10px;
+	max-width: 600px;
+	margin: 20px auto;
 
 	p {
 		color: #959595;
 	}
+
+	@include breakpoint($breakpoint-medium) {
+		margin: 40px auto;
+	}
 }
 
 .reference__photos {
-	margin-top: 20px;
+	max-width: 1300px;
+	margin: 20px auto;
+
+	@include breakpoint($breakpoint-small) {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+
+	.img-wrapper {
+		@include breakpoint($breakpoint-small) {
+			width: calc(50% - 5px);
+		}
+
+		@include breakpoint($breakpoint-medium) {
+			width: calc(33.33% - 8px);
+		}
+	}	
 
 	img {
 		max-width: 100%;
+	    border: 1px solid #CCC;
+	    margin: -1px -1px 6px;		
+	    cursor: pointer;
 	}
 }

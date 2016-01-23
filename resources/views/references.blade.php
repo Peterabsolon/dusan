@@ -28,23 +28,25 @@
 		<main class="content">
 			<section class="references">
 				<div class="container">
-					<div class="page-header">					
+					<div class="page-header wow fadeInUp">					
 						<h2 class="page-title">Referencie</h2>
 					</div>
 
 					@foreach ($references as $reference_key => $reference)
 						<div class="reference">
-							<h2 class="content-title">{{ $reference->title }}</h2>
-							<div class="reference__body">{!! $reference->body !!}</div>
+							<h2 class="content-title wow fadeInUp">{{ $reference->title }}</h2>
+							<div class="reference__body wow fadeInUp">{!! $reference->body !!}</div>
 							@if ($reference->photos->count() > 0)
 							<div class="reference__photos">
 								@foreach ($reference->photos as $photo_key => $photo)
-								<picture>
-									<source srcset="{!! asset('images/photos/' . $photo->photo_large) !!}" media="(min-width: 1200px)">
-									<source srcset="{!! asset('images/photos/' . $photo->photo_medium) !!}" media="(min-width: 768px)">
-									<source srcset="{!! asset('images/photos/' . $photo->photo_small_2x) !!}" media="(-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 144), (min-resolution: 144dppx)">
-									<img srcset="{!! asset('images/photos/' . $photo->photo_small) !!}">
-								</picture>
+								<div class="img-wrapper wow fadeInUp">
+									<picture>
+										<source srcset="{!! asset('images/photos/' . $photo->photo_large) !!}" media="(min-width: 1200px)">
+										<source srcset="{!! asset('images/photos/' . $photo->photo_medium) !!}" media="(min-width: 768px)">
+										<source srcset="{!! asset('images/photos/' . $photo->photo_small_2x) !!}" media="(-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 144), (min-resolution: 144dppx)">
+										<img srcset="{!! asset('images/photos/' . $photo->photo_small) !!}">
+									</picture>
+								</div>
 								@endforeach
 							</div>
 							@endif

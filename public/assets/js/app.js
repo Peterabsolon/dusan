@@ -1,25 +1,40 @@
-// Fix for SVG background images in WebKit
-function loadSVG(svgpath){
-     if( /webkit/gi.test(navigator.userAgent.toLowerCase()) ){
-       var obj = document.createElement('object');
-       obj.setAttribute('type', 'image/svg+xml');
-       obj.setAttribute('data', svgpath);
-       obj.setAttribute('width', '1');
-       obj.setAttribute('height', '1');
-       obj.setAttribute('style', 'width: 0px; height: 0px; position: absolute;visibility : hidden');
-       document.getElementsByTagName('html')[0].appendChild(obj);
-     }
-}
-
-window.onload = function(){
-  loadSVG('images/site/sprite.svg');
-}
-
 $(document).ready(function(){
+
+  new WOW().init();
 	
   $('button[data-action="toggle-menu"]').on('click', function(){
 		$(this).toggleClass('header__button--toggled'); 
 
     $('.sidebar, body').toggleClass('sidebar--toggled');
 	}); 
+
+  $('.services__item').each(function(){
+    $(this).addClass('loaded');
+  });
+
+  $(window).scroll(function(event) {
+    
+    var win = $(window);
+    var elements = $(".to-load");
+
+    // Already visible modules
+    elements.each(function(i, el) {
+      var el = $(el);
+      if (el.visible(true)) {
+        el.addClass("already-visible"); 
+      } 
+    });
+
+    win.scroll(function(event) {
+      
+      elements.each(function(i, el) {
+        var el = $(el);
+        if (el.visible(true)) {
+          el.addClass("loaded"); 
+        } 
+      });
+      
+    });
+    
+  });  
 }); 

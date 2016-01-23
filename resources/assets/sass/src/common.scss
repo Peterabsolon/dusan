@@ -126,7 +126,7 @@ ul {
 	font-weight: bold;
 	border: 2px solid #fff;
 	border-radius: 50px;
-	transition: .15s ease all;
+	transition: .15s ease color background;
 
 	@include breakpoint($breakpoint-quadhd) {
 		padding: 13px 40px;

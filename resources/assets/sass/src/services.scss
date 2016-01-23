@@ -271,6 +271,7 @@
 }
 
 .service-pricelist {
+	margin-top: 20px;
 	@include breakpoint($breakpoint-small) {
 		display: flex;
 	}	

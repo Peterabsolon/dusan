@@ -82,12 +82,15 @@ class Reference extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function createPhoto($image, $reference_id)
+    public function savePhotos($photos, $reference_id)
     {
         DB::table('photos')->insert(
             array(
-                'reference_id' => $reference_id,
-                'image' => $image
+                'reference_id'      => $reference_id,
+                'photo_small'       => $photos['photo_small'],
+                'photo_small_2x'    => $photos['photo_small_2x'],
+                'photo_medium'      => $photos['photo_medium'],
+                'photo_large'       => $photos['photo_large']
             )
         );
 

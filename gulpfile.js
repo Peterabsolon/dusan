@@ -35,6 +35,8 @@ elixir(function(mix) {
 
 		.scripts([
 			'vendor/jquery.min.js',
+			'vendor/smoothscroll.js',
+			'vendor/picturefill.min.js',
 			'vendor/fastclick.js',
 		], 'public/assets/js/libs.js');
 });

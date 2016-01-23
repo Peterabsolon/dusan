@@ -18,22 +18,23 @@
 		{!! Form::text('sort_order', null, ['class' => 'form-control']) !!}
 		{!! $errors->first('sort_order', '<div class="text-danger">:message</div>') !!}
 	</div>	
-
 	<div class="form-group">
 		{!! Form::label('photos', 'Photos:') !!}
 		<div class="well well-photos">
 			<div class="photos">
 				<?php $photo_key = 0; ?>
 				@if (isset($model) && $model->photos)
-					@foreach ($model->photos as $photo)
+					@foreach ($model->photos as $key => $photo)
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<div class="img-thumbnail">
-									<img src="{!! asset('images/photos/' . $photo->image) !!}" class="img-responsive">
+									<img src="{!! asset('images/photos/' . $photo->photo_small) !!}" class="img-responsive">
 								</div>
-								<input type="file" name="photos[]" class="input-file" id="file-photo-{{ $photo_key }}">
+								<input type="hidden" name="photos[]" value="{{ $photo->photo_large }}">
+								{!! Form::file('file-photo-' . $key, ['class' => 'input-file', 'id' => 'file-photo-' . $key]) !!}
 								<label for="file-photo-{{ $photo_key }}" class="btn btn-primary btn-upload"><i class="fa fa-upload"></i> <span>Choose a file</span></label>
 								<button type="button" class="btn btn-danger btn-entry-delete" data-type="photo"><i class="fa fa-close"></i></button>
+								<?php $photo_key++; ?>
 							</div>
 						</div>
 					@endforeach
@@ -42,8 +43,6 @@
 			<button type="button" class="btn btn-success btn-entry-add" data-type="photo"><i class="fa fa-plus"></i> Add photo</button>			
 		</div>
 	</div>
-
-
 	<div class="form-group">
 		{!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
 	</div>
@@ -96,9 +95,10 @@
 
 				var html  = '<div class="panel panel-default">';
 					html +=		'<div class="panel-body">';
-
+								
 				if (type == 'photo') {
-					html += '<input type="file" name="photos[]" class="input-file" id="file-photo-' + photo_key + '">';
+					html += '<input type="hidden" name="photos[]" value="">';
+					html += '<input type="file" id="file-photo-' + photo_key + '" class="input-file" name="file-photo-' + photo_key + '">';
 					html += '<label for="file-photo-' + photo_key + '" class="btn btn-primary btn-upload"><i class="fa fa-upload"></i> <span>Choose a file</span></label>';
 					html += '<button type="button" class="btn btn-danger btn-entry-delete" data-type="photo"><i class="fa fa-close"></i></button>';
 						

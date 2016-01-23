@@ -72,6 +72,30 @@ p {
     padding: 0;
 }
 
+h2.page-title {
+    font-family: 'Nexa';
+    font-size: 30px;
+    color: $color-primary;
+    margin: 0;
+    padding-top: 12px;
+}
+
+h2.content-title {
+    color: $color-primary;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 50px 0 0;
+    padding: 0;
+}
+
+h3.content-title {
+    color: $color-text;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
 h3 {
     color: $color-text;
     font-weight: bold;

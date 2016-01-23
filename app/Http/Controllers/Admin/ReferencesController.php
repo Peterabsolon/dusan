@@ -56,6 +56,44 @@ class ReferencesController extends BaseController
     }
 
     /**
+     * Upload photos
+     */
+    public function uploadPhotos($photo) {
+        $photos = array();
+
+        // Upload large photo
+        $this->uploader->setExt('.jpg')->upload_image($photo)->save('images/photos');
+        $photos['photo_large'] = $this->uploader->getFilename();
+
+        // Determine aspect ratio
+        $photo_size = getimagesize('images/photos/' . $photos['photo_large']);
+        $photo_aspect_ratio = $photo_size[0] / $photo_size[1];
+
+        // Upload medium photo
+        $medium_width = 1200;
+        $medium_height = $medium_width / $photo_aspect_ratio;
+
+        $this->uploader->setExt('.jpg')->upload_image($photo)->resize($medium_width, $medium_height)->save('images/photos');
+        $photos['photo_medium'] = $this->uploader->getFilename();
+
+        // Upload small photo
+        $small_width = 480;
+        $small_height = $small_width / $photo_aspect_ratio;
+
+        $this->uploader->setExt('.jpg')->upload_image($photo)->resize($small_width, $small_height)->save('images/photos');
+        $photos['photo_small'] = $this->uploader->getFilename();
+
+        // Upload small retina photo
+        $small_2x_width = 960;
+        $small_2x_height = $small_2x_width / $photo_aspect_ratio;
+
+        $this->uploader->setExt('.jpg')->upload_image($photo)->resize($small_2x_width, $small_2x_height)->save('images/photos');
+        $photos['photo_small_2x'] = $this->uploader->getFilename();
+
+        return $photos;
+    }
+
+    /**
      * Show the form for creating a new reference.
      *
      * @return Response
@@ -78,16 +116,19 @@ class ReferencesController extends BaseController
 
         $reference_id = $this->repository->create($data)->id;
 
-        // $this->repository->deletePhotos($reference_id);
+        if (\Input::has('photos')) 
+        {
+            $photos = \Input::get('photos');
 
-        if (isset($data['photos'])) {
-            foreach ($data['photos'] as $photo) {
-                if ($photo != '') {
-                    $this->uploader->setExt('.jpg')->upload_image($photo)->save('images/photos');
+            $photo_count = count($photos);
 
-                    $file = $this->uploader->getFilename();
+            for ($i = 0; $i < $photo_count; $i++) {
+                $photo = \Input::file('file-photo-' . $i);
 
-                    $this->repository->createPhoto($file, $reference_id);
+                if ($photo) {
+                    $photos = $this->uploadPhotos($photo);
+
+                    $this->repository->savePhotos($photos, $reference_id);
                 }
             }
         }
@@ -150,18 +191,38 @@ class ReferencesController extends BaseController
             $reference->update($data);
 
             $this->repository->deletePhotos($id);
+            
+            if (\Input::has('photos')) 
+            {
+                $photos = \Input::get('photos');
 
-            if (isset($data['photos'])) {
-                foreach ($data['photos'] as $photo) {
-                    if ($photo != '') {
-                        $this->uploader->setExt('.jpg')->upload_image($photo)->save('images/photos');
+                $photo_count = count($photos);
 
-                        $file = $this->uploader->getFilename();
+                for ($i = 0; $i < $photo_count; $i++) {
 
-                        $this->repository->createPhoto($file, $id);
+                    // Existing image
+                    if ($photos[$i] != '') {
+                        $photo = 'images/photos/' . $photos[$i];
+
+                        if (file_exists($photo)) {
+                            $files = $this->uploadPhotos($photo);
+ 
+                            $this->repository->savePhotos($files, $id);
+                        }
+                    } 
+
+                    // New uploaded image
+                    else {
+                        $photo = \Input::file('file-photo-' . $i);
+
+                        if ($photo) {
+                            $files = $this->uploadPhotos($photo);
+ 
+                            $this->repository->savePhotos($files, $id);
+                        }
                     }
                 }
-            }          
+            }
 
             return $this->redirect('references.index');
         } catch (ModelNotFoundException $e) {

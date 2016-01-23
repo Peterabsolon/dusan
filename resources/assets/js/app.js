@@ -22,5 +22,4 @@ $(document).ready(function(){
 
     $('.sidebar, body').toggleClass('sidebar--toggled');
 	}); 
-  
 }); 

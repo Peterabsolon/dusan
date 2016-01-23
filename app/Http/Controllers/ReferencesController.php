@@ -15,9 +15,9 @@ class ReferencesController extends Controller
 	public function index()
 	{
 		$data = array(
-			'service' 	=> Reference::orderBy('sort_order')->get(),
-			'email'		=> Option::where('key', 'contact.email')->first()->value,
-			'phone'		=> Option::where('key', 'contact.phone')->first()->value
+			'references' 	=> Reference::orderBy('sort_order')->get(),
+			'email'			=> Option::where('key', 'contact.email')->first()->value,
+			'phone'			=> Option::where('key', 'contact.phone')->first()->value
 		);
 
 		return view('references', $data);

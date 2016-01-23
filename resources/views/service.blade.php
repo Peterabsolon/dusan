@@ -27,11 +27,11 @@
 		<main class="content">
 			<section class="service">
 				<div class="container">
-					<div class="service-header">
-						<div class="service-header__image">
+					<div class="page-header">
+						<div class="page-icon">
 							<img src="{!! asset('/images/site/' . $service->image) !!}" alt="{{ $service->title }}">
-						</div>
-						<h2 class="service-header__title">{{ $service->title }}</h2>
+						</div>					
+						<h2 class="page-title">{{ $service->title }}</h2>
 					</div>
 
 					<div class="service-body">

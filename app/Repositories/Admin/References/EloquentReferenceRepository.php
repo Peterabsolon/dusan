@@ -3,9 +3,23 @@
 namespace App\Repositories\Admin\References;
 
 use App\Entities\Reference;
+use App\Utilities\ImageUploader;
 
 class EloquentReferenceRepository implements ReferenceRepository
 {
+    /**
+     * @var ImageUploader
+     */
+    protected $uploader;
+
+    /**
+     * @param ImageUploader $uploader
+     */
+    public function __construct(ImageUploader $uploader)
+    {
+        $this->uploader = $uploader;
+    }    
+
     public function perPage()
     {
         return config('admin.reference.perpage');
@@ -82,9 +96,9 @@ class EloquentReferenceRepository implements ReferenceRepository
         return $this->getModel()->update($data);
     }
 
-    public function createPhoto($file, $reference_id) 
+    public function savePhotos($photos, $reference_id) 
     {
-        return $this->getModel()->createPhoto($file, $reference_id);
+        return $this->getModel()->savePhotos($photos, $reference_id);
     }
 
     public function deletePhotos($reference_id) {

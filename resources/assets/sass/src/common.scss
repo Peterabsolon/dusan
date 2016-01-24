@@ -82,14 +82,14 @@ ul {
 }
 
 body.sidebar--toggled {
-	.header--static {
-		position: static;
-	}
-
-	@include breakpoint($breakpoint-small) {
+	@include breakpoint(0px 767px) {
 		.header--static {
-			position: fixed;
+			position: static;
 		}
+
+		.content--static {
+			margin-top: 0;
+		}	
 	}
 }
 

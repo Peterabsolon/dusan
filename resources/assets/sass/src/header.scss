@@ -71,7 +71,7 @@
 	background: none;
 	border: none;
 	width: 22px;
-	height: 25px;
+	height: 18px;
 	outline: none;
 	transition: .3s ease-out all;
 	position: relative;
@@ -83,6 +83,7 @@
 
 	@include breakpoint($breakpoint-large) {
 		width: 28px;	
+		height: 25px;
 	}
 
 	@include breakpoint($breakpoint-quadhd) {

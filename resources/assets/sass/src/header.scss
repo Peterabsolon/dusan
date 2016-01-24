@@ -35,7 +35,6 @@
 
 .header--static {
 	position: fixed;
-	z-index: 1;
 	top: 0;
 }
 
@@ -46,7 +45,7 @@
 	letter-spacing: 7px;
 	text-shadow: 1px 1px 5px rgba(0,0,0,.1);
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	margin: 0;
 
 	a {
@@ -68,7 +67,7 @@
 .menu-button {
 	margin: 0;
 	padding: 0;
-	z-index: 4;
+	z-index: 3;
 	background: none;
 	border: none;
 	width: 22px;

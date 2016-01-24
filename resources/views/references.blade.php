@@ -111,5 +111,6 @@
 	</script>
     <script src="{!! asset('assets/js/libs.js') !!}"></script>
     <script src="{!! asset('assets/js/app.js') !!}"></script>	
+    {!! option('tracking') !!}
 
 </html>

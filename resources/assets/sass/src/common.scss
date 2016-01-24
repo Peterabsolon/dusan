@@ -85,6 +85,12 @@ body.sidebar--toggled {
 	.header--static {
 		position: static;
 	}
+
+	@include breakpoint($breakpoint-small) {
+		.header--static {
+			position: fixed;
+		}
+	}
 }
 
 .menu {

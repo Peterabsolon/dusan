@@ -24,7 +24,7 @@
 			</div>
 		</header> {{-- /header --}}
 
-		<main class="content">
+		<main class="content content--static">
 			<section class="contact">
 				<div class="container">
 					<div class="contact-data wow fadeInUp">

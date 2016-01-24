@@ -43,7 +43,7 @@ class ContactController extends Controller
             $message->to('info@dusankrajcovic.sk', 'Admin')->subject('Contact form message');
         });
 
-        return \Redirect::route('contact')
+        return \Redirect::route('kontakt')
             ->with('message', 'Ďakujeme, Vaša správa bola úspešne odoslaná!');
     }	
 }

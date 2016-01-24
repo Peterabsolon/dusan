@@ -31,6 +31,32 @@ ul {
 	background: #fff;
 }
 
+.content--static {
+	position: relative;
+	z-index: 2;
+	margin-top: 81px;
+
+	@include breakpoint($breakpoint-small) {
+		margin-top: 111px;
+	}
+
+	@include breakpoint($breakpoint-medium) {
+		margin-top: 131px;
+	}
+
+	@include breakpoint($breakpoint-full) {
+		margin-top: 171px;
+	}
+
+	@include breakpoint(1600px) {
+		margin-top: 211px;
+	}			
+
+	@include breakpoint($breakpoint-quadhd) {
+		margin-top: 232px;
+	}	
+}
+
 .sidebar {
 	position: fixed; 
 	top: 0;

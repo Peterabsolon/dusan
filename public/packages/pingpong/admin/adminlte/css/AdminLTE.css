@@ -3612,9 +3612,9 @@ fieldset[disabled] .btn-vk.active {
 }
 
 /* Hide menu items with CSS to avoid modyfing /vendor/pingpong/admin package */
-.sidebar-menu li:nth-child(1),
-.sidebar-menu li:nth-child(4),
-.sidebar-menu li:nth-child(5) {
+.sidebar-menu > li:nth-child(1),
+.sidebar-menu > li:nth-child(4),
+.sidebar-menu > li:nth-child(5) {
   display: none;
 }
 

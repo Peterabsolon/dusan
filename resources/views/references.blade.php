@@ -25,7 +25,7 @@
 			</div>
 		</header> {{-- /header --}}
 
-		<main class="content">
+		<main class="content content--static">
 			<section class="references">
 				<div class="container">
 					<div class="page-header wow fadeInUp">					

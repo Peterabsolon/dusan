@@ -227,7 +227,9 @@
 }
 
 .pricelist {
-	margin-top: 40px;
+	max-width: 1100px;
+	margin: 40px auto 0;
+
 	@include breakpoint($breakpoint-small) {
 		display: flex;
 	}	
@@ -270,6 +272,8 @@
 
 .packages {
 	padding-bottom: 20px;
+	margin: 0 auto;
+	max-width: 1100px;
 
 	@include breakpoint($breakpoint-small) {
 		display: flex;

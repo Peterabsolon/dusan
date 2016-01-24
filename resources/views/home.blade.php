@@ -3,7 +3,7 @@
 	<head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Dusan Krajcovic</title>
+        <title>{{ $site_title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link href="{!! asset('images/site/favicon.png') !!}" rel="icon" />
         
@@ -13,7 +13,7 @@
 
 		<header class="header">
 			<div class="container">
-				<h1 class="logo"><a href="{!! route('home') !!}"><span>Bez</span>názvu</a></h1>
+				<h1 class="logo"><a href="{!! route('home') !!}">{!! $site_name !!}</a></h1>
 
 				<button type="button" class="menu-button menu-button--open" data-action="toggle-menu">
 					<div class="menu-button__bar"></div>
@@ -64,7 +64,7 @@
 					</ul>
 				</div>
 				<div class="copyrights">
-					<span class="copyrights__text">&copy; 2015 Beznazvu.sk. Všetky práva vyhradené.</span>
+					<span class="copyrights__text">&copy; 2015 {{ $site_title }}.sk. Všetky práva vyhradené.</span>
 				</div>
 			</div>
 		</footer> {{-- /footer --}}

@@ -26,9 +26,14 @@
 		{!! Form::open() !!}
 		<div class="form-group">
 			{!! Form::label('site_name', 'Site Name:') !!}
-			{!! Form::text('site_name', option('site.name'), ['class' => 'form-control']) !!}
+			{!! Form::textarea('site_name', option('site.name'), ['class' => 'form-control summernote']) !!}
 			{!! $errors->first('site_name', '<div class="text-danger">:message</div>') !!}
 		</div>
+		<div class="form-group">
+			{!! Form::label('site_title', 'Site Title:') !!}
+			{!! Form::text('site_title', option('site.title'), ['class' => 'form-control']) !!}
+			{!! $errors->first('site_title', '<div class="text-danger">:message</div>') !!}
+		</div>		
 		<div class="form-group">
 			{!! Form::label('site.slogan', 'Slogan:') !!}
 			{!! Form::text('site.slogan', option('site.slogan'), ['class' => 'form-control']) !!}
@@ -157,4 +162,23 @@
 	</div>
 </div>
 
+@stop
+
+@section('script')
+
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.1/summernote.css" rel="stylesheet">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.1/summernote.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var toolbar = [
+				['style', ['bold', 'clear']]
+			];
+
+			$('.summernote').summernote({
+				'minHeight': 50,
+				'toolbar': toolbar
+			});			
+		});
+	</script>
 @stop

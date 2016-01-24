@@ -4,12 +4,12 @@
 		background-size: cover;
 		background-position: 50% 50%;
 
-        @media 	only screen and (-webkit-min-device-pixel-ratio: 1.5),
-        		only screen and (min-resolution: 144dpi),
-        		(-webkit-min-device-pixel-ratio: 144),
-        		(min-resolution: 144dppx) {
+		@media 	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+				only screen and (min-resolution: 144dpi),
+				(-webkit-min-device-pixel-ratio: 144),
+				(min-resolution: 144dppx) {
 			background-image: url('/images/site/references_480@2x.jpg');
-        }		
+		}		
 
 		@include breakpoint($breakpoint-landscape) {
 			background-image: url('/images/site/references_768.jpg');
@@ -63,19 +63,13 @@
 
 	img {
 		max-width: 100%;
-	    border: 1px solid #CCC;
-	    margin: -1px -1px 6px;		
-	    cursor: pointer;
+		border: 1px solid #CCC;
+		margin: -1px -1px 6px;		
+		cursor: pointer;
 	}
 }
 
 .reference__photo {
-	transition: .2s ease transform;
-
-	&:hover {
-		transform: scale(1.03);
-	}
-
 	@include breakpoint($breakpoint-small) {
 		width: calc(50% - 5px);
 	}
@@ -91,9 +85,9 @@
 }
 
 .reference__video {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;	margin-bottom: 20px;
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px; height: 0; overflow: hidden;	margin-bottom: 20px;
 
 	iframe,
 	object,

@@ -123,6 +123,10 @@
 	font-size: 13px;
 	display: block;
 
+	strong {
+		font-weight: 400;
+	}
+
 	@include breakpoint($breakpoint-large) {
 		font-size: 14px;	
 	}	

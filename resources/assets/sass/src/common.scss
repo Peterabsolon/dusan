@@ -115,6 +115,7 @@ ul {
 .btn--primary {
 	color: $color-primary;
 	border-color: $color-primary;
+	background: none;
 
 	&:hover {
 		text-shadow: none;

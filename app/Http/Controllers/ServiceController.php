@@ -17,13 +17,17 @@ class ServiceController extends Controller
     protected $services; 
     protected $email;
     protected $phone;
+    protected $site_name;
+    protected $site_title;
 
     public function __construct() 
     {
         $this->services = Service::orderBy('sort_order')->get();
 
-		$this->email = Option::where('key', 'contact.email')->first()->value;
-        $this->phone = Option::where('key', 'contact.phone')->first()->value;        
+		$this->email 		= Option::where('key', 'contact.email')->first()->value;
+        $this->phone 		= Option::where('key', 'contact.phone')->first()->value;
+        $this->site_title 	= Option::where('key', 'site.title')->first()->value;
+        $this->site_name 	= Option::where('key', 'site.name')->first()->value;
     }
 
 	public function stuzkova()
@@ -31,9 +35,11 @@ class ServiceController extends Controller
 		$service = $this->services[0];
 
 		$data = array(
-			'service' 	=> $service,
-			'email'		=> $this->email,
-			'phone'		=> $this->phone
+			'service' 		=> $service,
+			'email'			=> $this->email,
+			'phone'			=> $this->phone,
+			'site_title'	=> $this->site_title,
+			'site_name'		=> $this->site_name
 		);
 
 		return view('service', $data);
@@ -44,9 +50,11 @@ class ServiceController extends Controller
 		$service = $this->services[1];
 
 		$data = array(
-			'service' 	=> $service,
-			'email'		=> $this->email,
-			'phone'		=> $this->phone
+			'service' 		=> $service,
+			'email'			=> $this->email,
+			'phone'			=> $this->phone,
+			'site_title'	=> $this->site_title,
+			'site_name'		=> $this->site_name			
 		);
 
 		return view('service', $data);
@@ -57,9 +65,11 @@ class ServiceController extends Controller
 		$service = $this->services[2];
 
 		$data = array(
-			'service' 	=> $service,
-			'email'		=> $this->email,
-			'phone'		=> $this->phone
+			'service' 		=> $service,
+			'email'			=> $this->email,
+			'phone'			=> $this->phone,
+			'site_title'	=> $this->site_title,
+			'site_name'		=> $this->site_name			
 		);
 
 		return view('service', $data);

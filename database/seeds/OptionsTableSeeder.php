@@ -20,7 +20,11 @@ class OptionsTableSeeder extends Seeder
         	array(
         		'key' => 'contact.phone',
         		'value' => '+123456789',
-        	),        	
+        	), 
+            array(
+                'key' => 'site.title',
+                'value' => 'Beznazvu'
+            ),       	
         );
 
         foreach ($options as $option) {
